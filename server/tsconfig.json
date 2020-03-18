@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "incremental": true,
+    "outDir": "dist",
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "typeRoots": ["node_modules/@types", "typings"]
+  }
+}
