@@ -1,0 +1,692 @@
+[
+  {
+    "timestamp": "2020-02-09",
+    "data": [
+      {
+        "autonomousCommunity": "andalucia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "aragon",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "asturias",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "baleares",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "canarias",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cantabria",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-la-mancha",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-y-leon",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cataluna",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "ceuta",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "c-valencia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "extremadura",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "galicia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "madrid",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "melilla",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "murcia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "navarra",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "pais-vasco",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "la-rioja",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2020-02-24",
+    "data": [
+      {
+        "autonomousCommunity": "andalucia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "aragon",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "asturias",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "baleares",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "canarias",
+        "values": {
+          "casos": 4,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cantabria",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-la-mancha",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-y-leon",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cataluna",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "ceuta",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "c-valencia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "extremadura",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "galicia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "madrid",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "melilla",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "murcia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "navarra",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "pais-vasco",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "la-rioja",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2020-02-27",
+    "data": [
+      {
+        "autonomousCommunity": "andalucia",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "aragon",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "asturias",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "baleares",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "canarias",
+        "values": {
+          "casos": 2,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cantabria",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-la-mancha",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-y-leon",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cataluna",
+        "values": {
+          "casos": 2,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "ceuta",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "c-valencia",
+        "values": {
+          "casos": 2,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "extremadura",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "galicia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "madrid",
+        "values": {
+          "casos": 4,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "melilla",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "murcia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "navarra",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "pais-vasco",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "la-rioja",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2020-02-28",
+    "data": [
+      {
+        "autonomousCommunity": "andalucia",
+        "values": {
+          "casos": 5,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "aragon",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "asturias",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "baleares",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "canarias",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cantabria",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-la-mancha",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-y-leon",
+        "values": {
+          "casos": 2,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cataluna",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "ceuta",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "c-valencia",
+        "values": {
+          "casos": 6,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "extremadura",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "galicia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "madrid",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "melilla",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "murcia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "navarra",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "pais-vasco",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "la-rioja",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2020-03-02",
+    "data": [
+      {
+        "autonomousCommunity": "andalucia",
+        "values": {
+          "casos": 6,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "aragon",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "asturias",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "baleares",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "canarias",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cantabria",
+        "values": {
+          "casos": 10,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-la-mancha",
+        "values": {
+          "casos": 3,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "castilla-y-leon",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "cataluna",
+        "values": {
+          "casos": 12,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "ceuta",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "c-valencia",
+        "values": {
+          "casos": 7,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "extremadura",
+        "values": {
+          "casos": 6,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "galicia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "madrid",
+        "values": {
+          "casos": 24,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "melilla",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "murcia",
+        "values": {
+          "casos": 0,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "navarra",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "pais-vasco",
+        "values": {
+          "casos": 9,
+          "fallecidos": 0
+        }
+      },
+      {
+        "autonomousCommunity": "la-rioja",
+        "values": {
+          "casos": 1,
+          "fallecidos": 0
+        }
+      }
+    ]
+  }
+]

@@ -6,10 +6,9 @@
     "target": "ES6",
     "module": "CommonJS",
     "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types", "typings"],
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "typeRoots": ["node_modules/@types", "typings"]
+    "noUnusedParameters": true
   }
 }
