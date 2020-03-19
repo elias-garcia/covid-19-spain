@@ -1,5 +1,5 @@
 export { ScraperConfig };
 
 interface ScraperConfig {
-  readonly nextReport: number;
+  readonly nextReportIndex: number;
 }

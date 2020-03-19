@@ -6,7 +6,7 @@ import { MongoDoc } from "../interfaces/mongo-doc.type";
 export { ScraperConfigModel };
 
 const scraperConfigSchema = new Schema<ScraperConfig>({
-  nextReport: {
+  nextReportIndex: {
     type: Schema.Types.Number,
     required: true
   }
