@@ -1,4 +1,4 @@
-import * as database from "./shared/database";
+import * as database from "./shared/infrastructure/database";
 import * as scraper from "./scraper";
 
 async function main(): Promise<void> {

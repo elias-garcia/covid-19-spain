@@ -1,11 +1,9 @@
-export { Field, AutonomousCommunityData, ParsedReport };
+import {
+  AutonomousCommunityData,
+  Field
+} from "../shared/domain/autonomous-community-data.interface";
 
-type Field = "casos" | "fallecidos";
-
-interface AutonomousCommunityData {
-  readonly autonomousCommunity: string;
-  readonly values: Record<Field, number>;
-}
+export { ParsedReport };
 
 interface ParsedReport {
   readonly timestamp: Date;

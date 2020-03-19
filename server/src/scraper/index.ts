@@ -1,8 +1,9 @@
 import * as pdfParse from "pdf-parse";
 
-import { httpClient, HttpStatusCode } from "../shared/http";
+import { httpClient, HttpStatusCode } from "../shared/infrastructure/http";
 import { ParsedReport } from "./parsed-report.interface";
 import { parseReport } from "./parser";
+
 export { run };
 
 const index = 39;
