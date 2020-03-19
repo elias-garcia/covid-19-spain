@@ -1,5 +1,5 @@
-import { ParsedReport } from "./parsed-report.interface";
-import { AutonomousCommunityData } from "../shared/domain/autonomous-community-data.interface";
+import { ParsedReport } from "../domain/parsed-report.interface";
+import { AutonomousCommunityData } from "../../shared/domain/autonomous-community-data.interface";
 
 export { parseReport };
 

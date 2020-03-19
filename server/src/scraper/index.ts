@@ -1,8 +1,8 @@
 import * as pdfParse from "pdf-parse";
 
 import { httpClient, HttpStatusCode } from "../shared/infrastructure/http";
-import { ParsedReport } from "./parsed-report.interface";
-import { parseReport } from "./parser";
+import { ParsedReport } from "./domain/parsed-report.interface";
+import { parseReport } from "./application/parse-report";
 
 export { run };
 

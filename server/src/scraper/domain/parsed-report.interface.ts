@@ -1,7 +1,7 @@
 import {
   AutonomousCommunityData,
   Field
-} from "../shared/domain/autonomous-community-data.interface";
+} from "../../shared/domain/autonomous-community-data.interface";
 
 export { ParsedReport };
 
