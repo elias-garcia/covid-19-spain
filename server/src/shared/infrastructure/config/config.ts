@@ -6,6 +6,7 @@ export { config };
 
 const config: Config = validate(
   {
+    NODE_ENV: process.env.NODE_ENV || "development",
     API_PORT: process.env.API_PORT || 3000,
     MONGO_URI:
       process.env.MONGO_URI || "mongodb://localhost:27017/covid-19-spain"
