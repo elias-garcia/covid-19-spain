@@ -10,6 +10,5 @@ const httpClient: AxiosInstance = axios.create({
 });
 
 enum HttpStatusCode {
-  OK = 200,
-  NOT_FOUND = 404
+  OK = 200
 }
