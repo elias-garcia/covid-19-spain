@@ -6,7 +6,7 @@ import {
 export { ParsedReport };
 
 interface ParsedReport {
-  readonly timestamp: Date;
+  readonly timestamp: string;
   readonly autonomousCommunitiesData: AutonomousCommunityData[];
   readonly aggregates: Record<Field, number>;
 }

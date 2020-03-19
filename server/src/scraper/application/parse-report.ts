@@ -1,5 +1,6 @@
 import { ParsedReport } from "../domain/parsed-report.interface";
 import { AutonomousCommunityData } from "../../shared/domain/autonomous-community-data.interface";
+import { ParsingError } from "../domain/parsing.error";
 
 export { parseReport };
 
@@ -26,8 +27,8 @@ function parseRowValues(values: number[]): AutonomousCommunityData["values"] {
       };
     }
     default: {
-      throw new Error(
-        "Parsing error. I can only parse tables with 2 or 4 columns"
+      throw new ParsingError(
+        `I can only parse tables with 2 or 4 columns. This has ${values.length}`
       );
     }
   }
@@ -75,24 +76,24 @@ function parseTable(text: string): string[] {
   return temp3;
 }
 
-function parseDate(text: string): Date {
+function parseDate(text: string): string {
   const regExpMatch: RegExpMatchArray | null = text.match(
     /[0-9]{1,2}.[0-9]{1,2}.[0-9]{4}/
   );
 
   if (regExpMatch === null) {
-    throw new Error("Error parsing the date of the report");
+    throw new ParsingError("I couldn't find the date in the report");
   }
 
   const [day, month, year] = regExpMatch[0]
     .split(".")
     .map(value => Number(value));
 
-  return new Date(year, month - 1, day);
+  return `${year}-${month}-${day}`;
 }
 
 function parseReport(text: string): ParsedReport {
-  const parsedDate: Date = parseDate(text);
+  const parsedDate: string = parseDate(text);
   const tableRows: string[] = parseTable(text);
   const parsedAggregates: ParsedReport["aggregates"] = parseTableFooter(
     tableRows[tableRows.length - 1]
