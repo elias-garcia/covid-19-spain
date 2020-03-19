@@ -3,7 +3,6 @@ import * as pdfParse from "pdf-parse";
 import { httpClient, HttpStatusCode } from "../shared/http";
 import { ParsedReport } from "./parsed-report.interface";
 import { parseReport } from "./parser";
-
 export { run };
 
 const index = 39;
@@ -28,5 +27,5 @@ async function run(): Promise<void> {
   const parsedReport: ParsedReport = parseReport(parsedPdf.text);
 
   // tslint:disable-next-line: no-console
-  console.log(parsedReport.autonomousCommunitiesData);
+  console.log(parsedReport);
 }

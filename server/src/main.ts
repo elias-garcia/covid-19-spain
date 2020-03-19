@@ -1,7 +1,14 @@
+import * as database from "./shared/database";
 import * as scraper from "./scraper";
 
 async function main(): Promise<void> {
-  await scraper.run();
+  try {
+    await database.connect();
+    await scraper.run();
+  } catch (error) {
+    // tslint:disable-next-line: no-console
+    console.log(error);
+  }
 }
 
 main();
