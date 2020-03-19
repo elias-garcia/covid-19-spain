@@ -1,8 +1,8 @@
 import * as pdfParse from "pdf-parse";
 
 import { httpClient, HttpStatusCode } from "../shared/http";
-import { ParsedReport } from "./modules/parser/domain";
-import { parseReport } from "./modules/parser";
+import { ParsedReport } from "./parsed-report.interface";
+import { parseReport } from "./parser";
 
 export { run };
 
@@ -19,12 +19,14 @@ async function run(): Promise<void> {
   }
 
   if (response.status !== HttpStatusCode.OK) {
-    throw new Error("An unexpected error occurred fetching the new report");
+    throw new Error(
+      `An unexpected error occurred fetching the new report: ${response.statusText}`
+    );
   }
 
   const parsedPdf = await pdfParse(response.data);
   const parsedReport: ParsedReport = parseReport(parsedPdf.text);
 
   // tslint:disable-next-line: no-console
-  console.log(parsedReport.aggregates);
+  console.log(parsedReport.autonomousCommunitiesData);
 }
