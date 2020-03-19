@@ -13,6 +13,6 @@ const scraperConfigSchema = new Schema<ScraperConfig>({
 });
 
 const ScraperConfigModel = model<MongoDoc<ScraperConfig>>(
-  "ScraperConfig",
+  "Scraper-Config",
   scraperConfigSchema
 );
