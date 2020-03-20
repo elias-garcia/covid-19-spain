@@ -21,16 +21,25 @@ function slugifyAutonomousCommunityName(name: string[]): string {
 }
 
 function parseRowValues(values: number[]): AutonomousCommunityData["values"] {
-  if (values.length !== 4) {
-    throw new ParsingError(
-      `I can only parse tables with 4 columns. This has ${values.length}`
-    );
+  switch (values.length) {
+    case 2: {
+      return {
+        casos: values[0],
+        fallecidos: values[1]
+      };
+    }
+    case 4: {
+      return {
+        casos: values[0],
+        fallecidos: values[3]
+      };
+    }
+    default: {
+      throw new ParsingError(
+        `I can only parse tables with 4 columns. This has ${values.length}`
+      );
+    }
   }
-
-  return {
-    casos: values[0],
-    fallecidos: values[3]
-  };
 }
 
 function parseTableRows(tableRows: string[]): AutonomousCommunityData[] {
@@ -96,13 +105,12 @@ function parseTable(text: string): string[] {
     lowerCaseText.indexOf("andalucia"),
     text.length
   );
-  const tableText = textWithoutBeginning.slice(
-    0,
-    textWithoutBeginning.indexOf("total")
-  );
-  const tableData = normalizeWhiteSpaces(tableText).split(" ");
+  const tableData = normalizeWhiteSpaces(textWithoutBeginning).split(" ");
 
-  return groupRowsData(tableData);
+  return groupRowsData(tableData).slice(
+    0,
+    tableData.findIndex((value: string) => value.includes("la-rioja")) + 1
+  );
 }
 
 function formatDateMember(value: string): string {
