@@ -8,8 +8,12 @@ function parseNumericValue(value: string): number {
   return Number(value.replace(",", "."));
 }
 
+function normalizeString(value: string): string {
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/, "");
+}
+
 function normalizeAutonomousCommunityName(name: string): string {
-  return name.normalize("NFD").replace(/[\u0300-\u036f|.]/, "");
+  return normalizeString(name).replace(".", "");
 }
 
 function parseRowValues(values: number[]): AutonomousCommunityData["values"] {
@@ -69,9 +73,15 @@ function parseTable(text: string): string[] {
   const temp: string[] = text
     .slice(text.indexOf("CCAA"), text.length)
     .split(/\n/);
-
-  const temp2: string[] = temp.slice(0, temp.indexOf(" "));
-  const temp3: string[] = temp2.map(row => row.toLowerCase().trim());
+  const temp2: string[] = temp.slice(0, temp.indexOf(" ")).map((row: string) =>
+    normalizeString(row)
+      .toLowerCase()
+      .trim()
+  );
+  const temp3: string[] = temp2.slice(
+    temp2.findIndex((value: string) => value.includes("andalucia")) - 1,
+    temp2.length
+  );
 
   return temp3;
 }
