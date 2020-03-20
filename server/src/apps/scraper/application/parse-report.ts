@@ -106,10 +106,11 @@ function parseTable(text: string): string[] {
     text.length
   );
   const tableData = normalizeWhiteSpaces(textWithoutBeginning).split(" ");
+  const groupedRowsData = groupRowsData(tableData);
 
   return groupRowsData(tableData).slice(
     0,
-    tableData.findIndex((value: string) => value.includes("la-rioja")) + 1
+    groupedRowsData.findIndex((value: string) => value.includes("la-rioja")) + 1
   );
 }
 
