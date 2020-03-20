@@ -8,9 +8,9 @@ import { MongoDoc } from "../../shared/infrastructure/database/interfaces/mongo-
 import { ScraperConfig } from "../../shared/infrastructure/database/interfaces/scraper-config.interface";
 import { getPdfReport } from "./application/get-pdf-report";
 import { logger } from "../../shared/infrastructure/logging";
-import { Metric } from "../../shared/infrastructure/database/interfaces/metric.interface";
-import { MetricModel } from "../../shared/infrastructure/database/models/metric.model";
-import { metricValidationSchema } from "../../shared/infrastructure/validation/schemas/metric.validation-schema";
+import { Report } from "../../shared/infrastructure/database/interfaces/report.interface";
+import { ReportModel } from "../../shared/infrastructure/database/models/report.model";
+import { metricValidationSchema } from "../../shared/infrastructure/validation/schemas/report.validation-schema";
 import { validateOne } from "../../shared/infrastructure/validation";
 import { ReportNotYetAvailable } from "./domain/report-not-yet-available.error";
 import { CRON_EXPRESSION } from "./constants";
@@ -60,7 +60,7 @@ async function run(): Promise<void> {
   const parsedPdf = await pdfParse(pdfBuffer);
   const parsedReport: ParsedReport = parseReport(parsedPdf.text);
   logger.info(`[SCRAPER] Parsing report... OK`);
-  const metric: Metric = validateOne(
+  const report: Report = validateOne(
     {
       timestamp: parsedReport.timestamp,
       data: parsedReport.autonomousCommunitiesData
@@ -68,7 +68,7 @@ async function run(): Promise<void> {
     metricValidationSchema
   );
 
-  await MetricModel.create(metric);
+  await ReportModel.create(report);
   scraperConfig.nextReportIndex = scraperConfig.nextReportIndex + 1;
   await scraperConfig.save();
   logger.info(`[SCRAPER] FINISHED`);

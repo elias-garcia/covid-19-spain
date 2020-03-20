@@ -1,9 +1,9 @@
 import * as yup from "yup";
 
-import { Metric } from "../../database/interfaces/metric.interface";
+import { Report } from "../../database/interfaces/report.interface";
 import { AutonomousCommunityData } from "../../../domain/autonomous-community-data.interface";
 
-export { metricValidationSchema };
+export { reportValidationSchema as metricValidationSchema };
 
 const autonomousCommunityDataValidationSchema: yup.Schema<AutonomousCommunityData> = yup
   .object()
@@ -15,7 +15,7 @@ const autonomousCommunityDataValidationSchema: yup.Schema<AutonomousCommunityDat
     })
   });
 
-const metricValidationSchema: yup.Schema<Metric> = yup.object().shape({
+const reportValidationSchema: yup.Schema<Report> = yup.object().shape({
   timestamp: yup.date(),
   data: yup.array(autonomousCommunityDataValidationSchema)
 });

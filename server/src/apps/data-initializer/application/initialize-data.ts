@@ -1,14 +1,14 @@
 import * as autonomousCommunitiesData from "../data/autonomous-communities.json";
-import * as metricsData from "../data/metrics.json";
+import * as reportsData from "../data/metrics.json";
 import * as scraperConfigData from "../data/scraper-config.json";
 import { scraperConfigValidationSchema } from "../../../shared/infrastructure/validation/schemas/scraper-config.validation-schema";
 import {
   validateOne,
   validateMany
 } from "../../../shared/infrastructure/validation";
-import { metricValidationSchema } from "../../../shared/infrastructure/validation/schemas/metric.validation-schema";
-import { Metric } from "../../../shared/infrastructure/database/interfaces/metric.interface";
-import { MetricModel } from "../../../shared/infrastructure/database/models/metric.model";
+import { metricValidationSchema } from "../../../shared/infrastructure/validation/schemas/report.validation-schema";
+import { Report } from "../../../shared/infrastructure/database/interfaces/report.interface";
+import { ReportModel } from "../../../shared/infrastructure/database/models/report.model";
 import { ScraperConfig } from "../../../shared/infrastructure/database/interfaces/scraper-config.interface";
 import { ScraperConfigModel } from "../../../shared/infrastructure/database/models/scraper-config.model";
 import { AutonomousCommunity } from "../../../shared/infrastructure/database/interfaces/autonomous-community.interface";
@@ -26,11 +26,11 @@ async function initializeAutonomousCommunities(): Promise<void> {
 }
 
 async function initializeMetrics(): Promise<void> {
-  const validatedMetricsData: Metric[] = validateMany(
-    metricsData,
+  const validatedReportsData: Report[] = validateMany(
+    reportsData,
     metricValidationSchema
   );
-  await MetricModel.create(validatedMetricsData);
+  await ReportModel.create(validatedReportsData);
 }
 
 async function initializeScraperConfig(): Promise<void> {

@@ -1,12 +1,12 @@
 import { Schema, Model, model } from "mongoose";
 
 import { AutonomousCommunityData } from "../../../domain/autonomous-community-data.interface";
-import { Metric } from "../interfaces/metric.interface";
+import { Report } from "../interfaces/report.interface";
 import { MongoDoc } from "../interfaces/mongo-doc.type";
 
-export { MetricModel };
+export { ReportModel };
 
-const metricDataSchema = new Schema<AutonomousCommunityData>(
+const reportDataSchema = new Schema<AutonomousCommunityData>(
   {
     autonomousCommunity: {
       type: Schema.Types.String,
@@ -26,15 +26,15 @@ const metricDataSchema = new Schema<AutonomousCommunityData>(
   { _id: false }
 );
 
-const metricSchema = new Schema<Metric>({
+const reportSchema = new Schema<Report>({
   timestamp: {
     type: Schema.Types.Date,
     required: true
   },
-  data: [metricDataSchema]
+  data: [reportDataSchema]
 });
 
-const MetricModel: Model<MongoDoc<Metric>> = model<MongoDoc<Metric>>(
-  "Metric",
-  metricSchema
+const ReportModel: Model<MongoDoc<Report>> = model<MongoDoc<Report>>(
+  "Report",
+  reportSchema
 );

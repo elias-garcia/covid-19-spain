@@ -1,6 +1,6 @@
 import { AutonomousCommunityData } from "../../../domain/autonomous-community-data.interface";
 
-export interface Metric {
+export interface Report {
   readonly timestamp: Date;
   readonly data: AutonomousCommunityData[];
 }
