@@ -17,5 +17,8 @@ const autonomousCommunityDataValidationSchema: yup.Schema<AutonomousCommunityDat
 
 const reportValidationSchema: yup.Schema<Report> = yup.object().shape({
   timestamp: yup.date(),
-  data: yup.array(autonomousCommunityDataValidationSchema)
+  data: yup
+    .array()
+    .of(autonomousCommunityDataValidationSchema)
+    .required()
 });

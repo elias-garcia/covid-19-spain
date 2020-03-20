@@ -43,6 +43,7 @@ async function runUntilGetUpToDate(): Promise<void> {
         logger.info("[SCRAPER] Getting metrics up to date... OK");
         break;
       }
+      throw error;
     }
   }
 }
@@ -67,8 +68,6 @@ async function run(): Promise<void> {
     },
     reportValidationSchema
   );
-
-  console.log(JSON.stringify(report.data));
 
   await ReportModel.create(report);
   scraperConfig.nextReportIndex = scraperConfig.nextReportIndex + 1;
