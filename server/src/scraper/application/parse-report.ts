@@ -9,33 +9,28 @@ function parseNumericValue(value: string): number {
 }
 
 function normalizeString(value: string): string {
-  return value.normalize("NFD").replace(/[\u0300-\u036f]/, "");
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-function normalizeAutonomousCommunityName(name: string): string {
-  return normalizeString(name).replace(".", "");
+function normalizeWhiteSpaces(value: string): string {
+  return value.replace(/\s{2,}/g, " ");
+}
+
+function slugifyAutonomousCommunityName(name: string[]): string {
+  return name.join("-").replace(".", "");
 }
 
 function parseRowValues(values: number[]): AutonomousCommunityData["values"] {
-  switch (values.length) {
-    case 2: {
-      return {
-        casos: values[0],
-        fallecidos: values[1]
-      };
-    }
-    case 4: {
-      return {
-        casos: values[0],
-        fallecidos: values[3]
-      };
-    }
-    default: {
-      throw new ParsingError(
-        `I can only parse tables with 2 or 4 columns. This has ${values.length}`
-      );
-    }
+  if (values.length !== 4) {
+    throw new ParsingError(
+      `I can only parse tables with 4 columns. This has ${values.length}`
+    );
   }
+
+  return {
+    casos: values[0],
+    fallecidos: values[3]
+  };
 }
 
 function parseTableFooter(tableFooter: string): ParsedReport["aggregates"] {
@@ -63,27 +58,56 @@ function parseTableRows(tableRows: string[]): AutonomousCommunityData[] {
     );
 
     return {
-      autonomousCommunity: normalizeAutonomousCommunityName(name.join("-")),
+      autonomousCommunity: slugifyAutonomousCommunityName(name),
       values: parseRowValues(rowValues)
     };
   });
 }
 
+function fixMissingValues(tableRows: string[]): string[] {
+  const fixedTableRows: string[] = [];
+  let i = 0;
+
+  while (i < tableRows.length) {
+    const tableRow: string = tableRows[i];
+
+    if (Number.isNaN(parseNumericValue(tableRow)) === true) {
+      let missingValues: string = tableRow;
+      let j = i + 1;
+
+      while (
+        j < tableRows.length &&
+        Number.isNaN(parseNumericValue(tableRows[j])) === false
+      ) {
+        missingValues += ` ${tableRows[j]}`;
+        j++;
+      }
+      i = j;
+      fixedTableRows.push(missingValues);
+    } else {
+      i++;
+    }
+  }
+
+  return fixedTableRows;
+}
+
 function parseTable(text: string): string[] {
-  const temp: string[] = text
-    .slice(text.indexOf("CCAA"), text.length)
-    .split(/\n/);
-  const temp2: string[] = temp.slice(0, temp.indexOf(" ")).map((row: string) =>
-    normalizeString(row)
-      .toLowerCase()
-      .trim()
+  const temp: string[] = normalizeString(text)
+    .toLowerCase()
+    .split(/\n/)
+    .filter((value: string) => value.trim() !== "")
+    .map((value: string) => normalizeWhiteSpaces(value).trim());
+  const temp2: string[] = temp.slice(
+    temp.findIndex((value: string) => value.includes("ccaa")) + 1,
+    temp.length
   );
   const temp3: string[] = temp2.slice(
-    temp2.findIndex((value: string) => value.includes("andalucia")) - 1,
-    temp2.length
+    0,
+    temp2.findIndex((value: string) => value.includes("total")) + 1
   );
 
-  return temp3;
+  return fixMissingValues(temp3);
 }
 
 function formatDateMember(value: string): string {
