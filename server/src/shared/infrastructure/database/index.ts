@@ -9,7 +9,8 @@ async function connect(): Promise<void> {
   logger.info(`[DB] Connecting to the database on: ${config.MONGO_URI}`);
   await mongooose.connect(config.MONGO_URI, {
     useUnifiedTopology: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true
   });
   logger.info(`[DB] Database connection established`);
 }
