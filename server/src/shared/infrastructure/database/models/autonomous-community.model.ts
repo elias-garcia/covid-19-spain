@@ -8,7 +8,8 @@ export { AutonomousCommunityModel };
 const autonomousCommunitySchema = new Schema<AutonomousCommunity>({
   name: {
     type: Schema.Types.String,
-    required: true
+    required: true,
+    unique: true
   }
 });
 
