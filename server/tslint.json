@@ -5,7 +5,6 @@
     "no-unused-expression": true,
     "no-unused-variable": true,
     "typedef": true,
-    "prefer-readonly": true,
     "prettier": true
   }
 }
