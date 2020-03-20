@@ -33,15 +33,6 @@ function parseRowValues(values: number[]): AutonomousCommunityData["values"] {
   };
 }
 
-function parseTableFooter(tableFooter: string): ParsedReport["aggregates"] {
-  const aggregates: number[] = tableFooter
-    .split(" ")
-    .map((value: string) => parseNumericValue(value))
-    .filter((value: number) => Number.isNaN(value) === false);
-
-  return parseRowValues(aggregates);
-}
-
 function parseTableRows(tableRows: string[]): AutonomousCommunityData[] {
   return tableRows.map((tableRow: string) => {
     const rowColumns: string[] = tableRow.split(" ");
@@ -64,50 +55,54 @@ function parseTableRows(tableRows: string[]): AutonomousCommunityData[] {
   });
 }
 
-function fixMissingValues(tableRows: string[]): string[] {
-  const fixedTableRows: string[] = [];
+function groupRowsData(tableData: string[]): string[] {
+  const tableRows: string[] = [];
   let i = 0;
 
-  while (i < tableRows.length) {
-    const tableRow: string = tableRows[i];
+  while (i < tableData.length) {
+    const value: string = tableData[i];
 
-    if (Number.isNaN(parseNumericValue(tableRow)) === true) {
-      let missingValues: string = tableRow;
+    if (Number.isNaN(parseNumericValue(value)) === true) {
+      let missingValues: string = value;
       let j = i + 1;
 
       while (
-        j < tableRows.length &&
-        Number.isNaN(parseNumericValue(tableRows[j])) === false
+        j < tableData.length &&
+        Number.isNaN(parseNumericValue(tableData[j])) === true
       ) {
-        missingValues += ` ${tableRows[j]}`;
+        missingValues += `-${tableData[j]}`;
+        j++;
+      }
+      while (
+        j < tableData.length &&
+        Number.isNaN(parseNumericValue(tableData[j])) === false
+      ) {
+        missingValues += ` ${tableData[j]}`;
         j++;
       }
       i = j;
-      fixedTableRows.push(missingValues);
+      tableRows.push(missingValues);
     } else {
       i++;
     }
   }
 
-  return fixedTableRows;
+  return tableRows;
 }
 
 function parseTable(text: string): string[] {
-  const temp: string[] = normalizeString(text)
-    .toLowerCase()
-    .split(/\n/)
-    .filter((value: string) => value.trim() !== "")
-    .map((value: string) => normalizeWhiteSpaces(value).trim());
-  const temp2: string[] = temp.slice(
-    temp.findIndex((value: string) => value.includes("ccaa")) + 1,
-    temp.length
+  const lowerCaseText: string = normalizeString(text).toLowerCase();
+  const textWithoutBeginning = lowerCaseText.slice(
+    lowerCaseText.indexOf("andalucia"),
+    text.length
   );
-  const temp3: string[] = temp2.slice(
+  const tableText = textWithoutBeginning.slice(
     0,
-    temp2.findIndex((value: string) => value.includes("total")) + 1
+    textWithoutBeginning.indexOf("total")
   );
+  const tableData = normalizeWhiteSpaces(tableText).split(" ");
 
-  return fixMissingValues(temp3);
+  return groupRowsData(tableData);
 }
 
 function formatDateMember(value: string): string {
@@ -133,16 +128,12 @@ function parseDate(text: string): string {
 function parseReport(text: string): ParsedReport {
   const parsedDate: string = parseDate(text);
   const tableRows: string[] = parseTable(text);
-  const parsedAggregates: ParsedReport["aggregates"] = parseTableFooter(
-    tableRows[tableRows.length - 1]
-  );
   const parsedAutonomousCommunitiesData: AutonomousCommunityData[] = parseTableRows(
     tableRows.slice(1, tableRows.length - 1)
   );
 
   return {
     timestamp: parsedDate,
-    autonomousCommunitiesData: parsedAutonomousCommunitiesData,
-    aggregates: parsedAggregates
+    autonomousCommunitiesData: parsedAutonomousCommunitiesData
   };
 }
