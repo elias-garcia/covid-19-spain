@@ -3,27 +3,33 @@ import { UnexpectedNumberOfScraperConfigsFoundError } from "../../shared/domain/
 import { initializeData } from "./application/initialize-data";
 import { logger } from "../../shared/infrastructure/logging";
 
-export { run };
+export { checkAndRun };
 
-async function run(): Promise<void> {
-  logger.info("[DATA-INITIALIZER] STARTED");
+async function shouldRun(): Promise<boolean> {
   try {
     await findScraperConfig();
-    logger.info(
-      "[DATA-INITIALIZER] Scraper config found. Skipping data initialization..."
-    );
+    logger.info("[DATA-INITIALIZER] Scraper config found.");
+    return false;
   } catch (error) {
     if (
       error instanceof UnexpectedNumberOfScraperConfigsFoundError &&
       error.scraperConfigsFound === 0
     ) {
-      logger.info(
-        "[DATA-INITIALIZER] No scraper config found. Initializing data..."
-      );
-      await initializeData();
-      logger.info("[DATA-INITIALIZER] Data initialized successfully");
+      logger.info("[DATA-INITIALIZER] No scraper config found");
+      return true;
     }
-  } finally {
-    logger.info("[DATA-INITIALIZER] FINISHED");
+    throw error;
   }
+}
+
+async function checkAndRun(): Promise<void> {
+  logger.info("[DATA-INITIALIZER] STARTED");
+  if ((await shouldRun()) === true) {
+    logger.info("[DATA-INITIALIZER] Initializing data...");
+    await initializeData();
+    logger.info("[DATA-INITIALIZER] Initializing data... OK");
+  } else {
+    logger.warn("[DATA-INITIALIZER] Skipping data initialization...");
+  }
+  logger.info("[DATA-INITIALIZER] FINISHED");
 }

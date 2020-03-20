@@ -10,7 +10,7 @@ const SCRAPER_CRON_EXPRESSION = "0 * * * *";
 async function main(): Promise<void> {
   try {
     await database.connect();
-    await dataInitializer.run();
+    await dataInitializer.checkAndRun();
     cron.schedule(SCRAPER_CRON_EXPRESSION, scraper.run);
   } catch (error) {
     logger.error(error);
