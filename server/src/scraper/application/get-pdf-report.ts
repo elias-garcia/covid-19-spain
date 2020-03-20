@@ -1,5 +1,7 @@
 import { httpClient, HttpStatusCode } from "../../shared/infrastructure/http";
 import { ReportNotYetAvailable } from "../domain/report-not-yet-available.error";
+import { AxiosError } from "axios";
+import { logger } from "../../shared/infrastructure/logging";
 
 export { getPdfReport };
 
@@ -12,7 +14,7 @@ const possiblePdfNameSuffixes = ["COVID-19", "COVID", "COVID_1200"];
 function getPossiblePdfNames(reportIndex: number): string[] {
   return possiblePdfNameSuffixes.map(
     (pdfNameSuffix: string) =>
-      `${pdfNamePrefix}_${reportIndex}_${pdfNameSuffix}`
+      `${pdfNamePrefix}_${reportIndex}_${pdfNameSuffix}.pdf`
   );
 }
 
@@ -26,12 +28,17 @@ async function getPdfReport(reportIndex: number): Promise<ArrayBuffer> {
   const possibleUrls: string[] = getPossibleUrls(reportIndex);
 
   for (const possibleUrl of possibleUrls) {
-    const response = await httpClient.get<ArrayBuffer>(possibleUrl, {
-      responseType: "arraybuffer"
-    });
+    try {
+      const response = await httpClient.get<ArrayBuffer>(possibleUrl, {
+        responseType: "arraybuffer"
+      });
 
-    if (response.status === HttpStatusCode.OK) {
-      return response.data;
+      if (response.status === HttpStatusCode.OK) {
+        return response.data;
+      }
+    } catch (error) {
+      const { message } = error as AxiosError;
+      logger.warn(`Error fetching the report: ${message}`);
     }
   }
 
