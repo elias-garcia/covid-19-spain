@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2020-02-09",
+    "timestamp": "2020-02-09T00:00:00Z",
     "data": [
       {
         "autonomousCommunity": "andalucia",
@@ -138,7 +138,7 @@
     ]
   },
   {
-    "timestamp": "2020-02-24",
+    "timestamp": "2020-02-24T00:00:00Z",
     "data": [
       {
         "autonomousCommunity": "andalucia",
@@ -276,7 +276,7 @@
     ]
   },
   {
-    "timestamp": "2020-02-27",
+    "timestamp": "2020-02-27T00:00:00Z",
     "data": [
       {
         "autonomousCommunity": "andalucia",
@@ -414,7 +414,7 @@
     ]
   },
   {
-    "timestamp": "2020-02-28",
+    "timestamp": "2020-02-28T00:00:00Z",
     "data": [
       {
         "autonomousCommunity": "andalucia",
@@ -552,7 +552,7 @@
     ]
   },
   {
-    "timestamp": "2020-03-02",
+    "timestamp": "2020-03-02T00:00:00Z",
     "data": [
       {
         "autonomousCommunity": "andalucia",

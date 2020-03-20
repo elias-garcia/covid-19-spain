@@ -86,6 +86,10 @@ function parseTable(text: string): string[] {
   return temp3;
 }
 
+function formatDateMember(value: string): string {
+  return value.length === 1 ? `0${value}` : value;
+}
+
 function parseDate(text: string): string {
   const regExpMatch: RegExpMatchArray | null = text.match(
     /[0-9]{1,2}.[0-9]{1,2}.[0-9]{4}/
@@ -95,11 +99,11 @@ function parseDate(text: string): string {
     throw new ParsingError("I couldn't find the date in the report");
   }
 
-  const [day, month, year] = regExpMatch[0]
-    .split(".")
-    .map(value => Number(value));
+  const [day, month, year] = regExpMatch[0].split(".");
 
-  return `${year}-${month}-${day}`;
+  return `${year}-${formatDateMember(month)}-${formatDateMember(
+    day
+  )}T00:00:00Z`;
 }
 
 function parseReport(text: string): ParsedReport {
