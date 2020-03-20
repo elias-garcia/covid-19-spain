@@ -37,6 +37,7 @@ async function getPdfReport(reportIndex: number): Promise<ArrayBuffer> {
       });
 
       if (response.status === HttpStatusCode.OK) {
+        logger.info("[SCRAPER] Fetching report... OK");
         return response.data;
       }
     } catch (error) {
