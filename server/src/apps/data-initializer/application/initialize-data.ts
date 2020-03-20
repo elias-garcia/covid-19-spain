@@ -6,7 +6,7 @@ import {
   validateOne,
   validateMany
 } from "../../../shared/infrastructure/validation";
-import { metricValidationSchema } from "../../../shared/infrastructure/validation/schemas/report.validation-schema";
+import { reportValidationSchema } from "../../../shared/infrastructure/validation/schemas/report.validation-schema";
 import { Report } from "../../../shared/infrastructure/database/interfaces/report.interface";
 import { ReportModel } from "../../../shared/infrastructure/database/models/report.model";
 import { ScraperConfig } from "../../../shared/infrastructure/database/interfaces/scraper-config.interface";
@@ -28,7 +28,7 @@ async function initializeAutonomousCommunities(): Promise<void> {
 async function initializeMetrics(): Promise<void> {
   const validatedReportsData: Report[] = validateMany(
     reportsData,
-    metricValidationSchema
+    reportValidationSchema
   );
   await ReportModel.create(validatedReportsData);
 }

@@ -10,7 +10,7 @@ import { getPdfReport } from "./application/get-pdf-report";
 import { logger } from "../../shared/infrastructure/logging";
 import { Report } from "../../shared/infrastructure/database/interfaces/report.interface";
 import { ReportModel } from "../../shared/infrastructure/database/models/report.model";
-import { metricValidationSchema } from "../../shared/infrastructure/validation/schemas/report.validation-schema";
+import { reportValidationSchema } from "../../shared/infrastructure/validation/schemas/report.validation-schema";
 import { validateOne } from "../../shared/infrastructure/validation";
 import { ReportNotYetAvailable } from "./domain/report-not-yet-available.error";
 import { CRON_EXPRESSION } from "./constants";
@@ -65,8 +65,10 @@ async function run(): Promise<void> {
       timestamp: parsedReport.timestamp,
       data: parsedReport.autonomousCommunitiesData
     },
-    metricValidationSchema
+    reportValidationSchema
   );
+
+  console.log(JSON.stringify(report.data));
 
   await ReportModel.create(report);
   scraperConfig.nextReportIndex = scraperConfig.nextReportIndex + 1;

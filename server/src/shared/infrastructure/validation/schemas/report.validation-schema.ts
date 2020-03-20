@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { Report } from "../../database/interfaces/report.interface";
 import { AutonomousCommunityData } from "../../../domain/autonomous-community-data.interface";
 
-export { reportValidationSchema as metricValidationSchema };
+export { reportValidationSchema };
 
 const autonomousCommunityDataValidationSchema: yup.Schema<AutonomousCommunityData> = yup
   .object()
