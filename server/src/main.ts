@@ -1,6 +1,7 @@
 import * as database from "./shared/infrastructure/database";
 import * as dataInitializer from "./apps/data-initializer";
 import * as scraper from "./apps/scraper";
+import * as api from "./apps/api";
 import { logger } from "./shared/infrastructure/logging";
 import { checkFirstRun } from "./shared/application/check-first-run";
 
@@ -26,6 +27,7 @@ async function main(): Promise<void> {
       logger.info("[MAIN] Skipping data-initialization");
     }
     scraper.scheduleRun();
+    api.bootstrap();
   } catch (error) {
     logger.error(error);
   }
