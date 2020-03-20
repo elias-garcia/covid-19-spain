@@ -2,15 +2,15 @@ import * as pdfParse from "pdf-parse";
 
 import { ParsedReport } from "./domain/parsed-report.interface";
 import { parseReport } from "./application/parse-report";
-import { findScraperConfig } from "../shared/application/find-scraper-config";
-import { MongoDoc } from "../shared/infrastructure/database/interfaces/mongo-doc.type";
-import { ScraperConfig } from "../shared/infrastructure/database/interfaces/scraper-config.interface";
+import { findScraperConfig } from "../../shared/application/find-scraper-config";
+import { MongoDoc } from "../../shared/infrastructure/database/interfaces/mongo-doc.type";
+import { ScraperConfig } from "../../shared/infrastructure/database/interfaces/scraper-config.interface";
 import { getPdfReport } from "./application/get-pdf-report";
-import { logger } from "../shared/infrastructure/logging";
-import { Metric } from "../shared/infrastructure/database/interfaces/metric.interface";
-import { MetricModel } from "../shared/infrastructure/database/models/metric.model";
-import { metricValidationSchema } from "../shared/infrastructure/validation/schemas/metric.validation-schema";
-import { validateOne } from "../shared/infrastructure/validation";
+import { logger } from "../../shared/infrastructure/logging";
+import { Metric } from "../../shared/infrastructure/database/interfaces/metric.interface";
+import { MetricModel } from "../../shared/infrastructure/database/models/metric.model";
+import { metricValidationSchema } from "../../shared/infrastructure/validation/schemas/metric.validation-schema";
+import { validateOne } from "../../shared/infrastructure/validation";
 
 export { run };
 

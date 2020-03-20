@@ -1,7 +1,10 @@
-import { httpClient, HttpStatusCode } from "../../shared/infrastructure/http";
+import {
+  httpClient,
+  HttpStatusCode
+} from "../../../shared/infrastructure/http";
 import { ReportNotYetAvailable } from "../domain/report-not-yet-available.error";
 import { AxiosError } from "axios";
-import { logger } from "../../shared/infrastructure/logging";
+import { logger } from "../../../shared/infrastructure/logging";
 
 export { getPdfReport };
 

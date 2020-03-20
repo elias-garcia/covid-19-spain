@@ -1,19 +1,19 @@
 import * as autonomousCommunitiesData from "../data/autonomous-communities.json";
 import * as metricsData from "../data/metrics.json";
 import * as scraperConfigData from "../data/scraper-config.json";
-import { scraperConfigValidationSchema } from "../../shared/infrastructure/validation/schemas/scraper-config.validation-schema";
+import { scraperConfigValidationSchema } from "../../../shared/infrastructure/validation/schemas/scraper-config.validation-schema";
 import {
   validateOne,
   validateMany
-} from "../../shared/infrastructure/validation";
-import { metricValidationSchema } from "../../shared/infrastructure/validation/schemas/metric.validation-schema";
-import { Metric } from "../../shared/infrastructure/database/interfaces/metric.interface";
-import { MetricModel } from "../../shared/infrastructure/database/models/metric.model";
-import { ScraperConfig } from "../../shared/infrastructure/database/interfaces/scraper-config.interface";
-import { ScraperConfigModel } from "../../shared/infrastructure/database/models/scraper-config.model";
-import { AutonomousCommunity } from "../../shared/infrastructure/database/interfaces/autonomous-community.interface";
-import { autonomousCommunityValidationSchema } from "../../shared/infrastructure/validation/schemas/autonomous-community.validation-schema";
-import { AutonomousCommunityModel } from "../../shared/infrastructure/database/models/autonomous-community.model";
+} from "../../../shared/infrastructure/validation";
+import { metricValidationSchema } from "../../../shared/infrastructure/validation/schemas/metric.validation-schema";
+import { Metric } from "../../../shared/infrastructure/database/interfaces/metric.interface";
+import { MetricModel } from "../../../shared/infrastructure/database/models/metric.model";
+import { ScraperConfig } from "../../../shared/infrastructure/database/interfaces/scraper-config.interface";
+import { ScraperConfigModel } from "../../../shared/infrastructure/database/models/scraper-config.model";
+import { AutonomousCommunity } from "../../../shared/infrastructure/database/interfaces/autonomous-community.interface";
+import { autonomousCommunityValidationSchema } from "../../../shared/infrastructure/validation/schemas/autonomous-community.validation-schema";
+import { AutonomousCommunityModel } from "../../../shared/infrastructure/database/models/autonomous-community.model";
 
 export { initializeData };
 

@@ -1,5 +1,5 @@
 import { ParsedReport } from "../domain/parsed-report.interface";
-import { AutonomousCommunityData } from "../../shared/domain/autonomous-community-data.interface";
+import { AutonomousCommunityData } from "../../../shared/domain/autonomous-community-data.interface";
 import { ParsingError } from "../domain/parsing.error";
 
 export { parseReport };

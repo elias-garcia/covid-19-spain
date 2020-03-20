@@ -1,7 +1,7 @@
-import { findScraperConfig } from "../shared/application/find-scraper-config";
-import { UnexpectedNumberOfScraperConfigsFoundError } from "../shared/domain/unexpected-number-of-scraper-configs-found.error";
+import { findScraperConfig } from "../../shared/application/find-scraper-config";
+import { UnexpectedNumberOfScraperConfigsFoundError } from "../../shared/domain/unexpected-number-of-scraper-configs-found.error";
 import { initializeData } from "./application/initialize-data";
-import { logger } from "../shared/infrastructure/logging";
+import { logger } from "../../shared/infrastructure/logging";
 
 export { run };
 

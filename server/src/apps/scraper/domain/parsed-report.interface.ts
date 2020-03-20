@@ -1,4 +1,4 @@
-import { AutonomousCommunityData } from "../../shared/domain/autonomous-community-data.interface";
+import { AutonomousCommunityData } from "../../../shared/domain/autonomous-community-data.interface";
 
 export { ParsedReport };
 

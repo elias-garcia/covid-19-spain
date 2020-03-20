@@ -1,6 +1,6 @@
 import * as database from "./shared/infrastructure/database";
-import * as dataInitializer from "./data-initializer";
-import * as scraper from "./scraper";
+import * as dataInitializer from "./apps/data-initializer";
+import * as scraper from "./apps/scraper";
 import { logger } from "./shared/infrastructure/logging";
 
 async function main(): Promise<void> {
