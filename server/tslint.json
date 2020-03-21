@@ -3,7 +3,6 @@
   "rules": {
     "no-any": true,
     "no-unused-expression": true,
-    "no-unused-variable": true,
     "typedef": true,
     "prettier": true
   }
