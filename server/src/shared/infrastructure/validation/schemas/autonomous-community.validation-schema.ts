@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import { AutonomousCommunity } from "../../database/interfaces/autonomous-community.interface";
+import { AutonomousCommunity } from "../../../domain/autonomous-community.interface";
 
 export { autonomousCommunityValidationSchema };
 

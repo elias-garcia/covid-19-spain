@@ -1,12 +1,11 @@
 import { Schema, Model, model } from "mongoose";
 
-import { AutonomousCommunityData } from "../../../domain/autonomous-community-data.interface";
-import { Report } from "../interfaces/report.interface";
+import { Report, ReportData } from "../../../domain/report.interface";
 import { MongoDoc } from "../interfaces/mongo-doc.type";
 
 export { ReportModel };
 
-const reportDataSchema = new Schema<AutonomousCommunityData>(
+const reportDataSchema = new Schema<ReportData>(
   {
     autonomousCommunity: {
       type: Schema.Types.String,

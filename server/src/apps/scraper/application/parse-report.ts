@@ -1,6 +1,5 @@
-import { ParsedReport } from "../domain/parsed-report.interface";
-import { AutonomousCommunityData } from "../../../shared/domain/autonomous-community-data.interface";
 import { ParsingError } from "../domain/parsing.error";
+import { ReportData, Report } from "../../../shared/domain/report.interface";
 
 export { parseReport };
 
@@ -20,7 +19,7 @@ function slugifyAutonomousCommunityName(name: string[]): string {
   return name.join("-").replace(".", "");
 }
 
-function parseRowValues(values: number[]): AutonomousCommunityData["values"] {
+function parseRowValues(values: number[]): ReportData["values"] {
   switch (values.length) {
     case 2: {
       return {
@@ -48,7 +47,7 @@ function parseRowValues(values: number[]): AutonomousCommunityData["values"] {
   }
 }
 
-function parseTableRows(tableRows: string[]): AutonomousCommunityData[] {
+function parseTableRows(tableRows: string[]): ReportData[] {
   return tableRows.map((tableRow: string) => {
     const rowColumns: string[] = tableRow.split(" ");
     const [name, rowValues] = rowColumns.reduce<[string[], number[]]>(
@@ -140,15 +139,13 @@ function parseDate(text: string): string {
   )}T00:00:00Z`;
 }
 
-function parseReport(text: string): ParsedReport {
+function parseReport(text: string): Report {
   const parsedDate: string = parseDate(text);
   const tableRows: string[] = parseTable(text);
-  const parsedAutonomousCommunitiesData: AutonomousCommunityData[] = parseTableRows(
-    tableRows
-  );
+  const parsedreportData: ReportData[] = parseTableRows(tableRows);
 
   return {
-    timestamp: parsedDate,
-    autonomousCommunitiesData: parsedAutonomousCommunitiesData
+    timestamp: new Date(parsedDate),
+    data: parsedreportData
   };
 }

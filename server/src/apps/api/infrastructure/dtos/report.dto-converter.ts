@@ -1,5 +1,5 @@
 import { MongoDoc } from "../../../../shared/infrastructure/database/interfaces/mongo-doc.type";
-import { Report } from "../../../../shared/infrastructure/database/interfaces/report.interface";
+import { Report } from "../../../../shared/domain/report.interface";
 
 export { reportDocsToDtos };
 

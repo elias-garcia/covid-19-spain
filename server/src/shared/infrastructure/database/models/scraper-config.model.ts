@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-import { ScraperConfig } from "../interfaces/scraper-config.interface";
+import { ScraperConfig } from "../../../domain/scraper-config.interface";
 import { MongoDoc } from "../interfaces/mongo-doc.type";
 
 export { ScraperConfigModel };

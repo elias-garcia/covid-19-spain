@@ -1,4 +1,4 @@
-import { AutonomousCommunity } from "../../../../shared/infrastructure/database/interfaces/autonomous-community.interface";
+import { AutonomousCommunity } from "../../../../shared/domain/autonomous-community.interface";
 import { MongoDoc } from "../../../../shared/infrastructure/database/interfaces/mongo-doc.type";
 
 export { autonomousCommunityDocsToDtos };

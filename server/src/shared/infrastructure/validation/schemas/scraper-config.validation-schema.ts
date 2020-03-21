@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-import { ScraperConfig } from "../../database/interfaces/scraper-config.interface";
+import { ScraperConfig } from "../../../domain/scraper-config.interface";
 
 export { scraperConfigValidationSchema };
 

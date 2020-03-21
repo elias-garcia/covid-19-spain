@@ -1,5 +1,5 @@
 import { MongoDoc } from "../../../../shared/infrastructure/database/interfaces/mongo-doc.type";
-import { Report } from "../../../../shared/infrastructure/database/interfaces/report.interface";
+import { Report } from "../../../../shared/domain/report.interface";
 import { ReportModel } from "../../../../shared/infrastructure/database/models/report.model";
 
 export { getAllReports };

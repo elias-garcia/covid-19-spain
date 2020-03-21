@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 
 import { HttpOkResponse } from "../http-responses";
-import { Report } from "../../../../../shared/infrastructure/database/interfaces/report.interface";
+import { Report } from "../../../../../shared/domain/report.interface";
 import { getAllReports } from "../../../application/reports/get-all-reports";
 import { reportDocsToDtos } from "../../dtos/report.dto-converter";
 

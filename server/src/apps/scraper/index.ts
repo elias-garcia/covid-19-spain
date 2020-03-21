@@ -1,14 +1,13 @@
 import * as pdfParse from "pdf-parse";
 import * as cron from "node-cron";
 
-import { ParsedReport } from "./domain/parsed-report.interface";
 import { parseReport } from "./application/parse-report";
 import { findScraperConfig } from "../../shared/application/find-scraper-config";
 import { MongoDoc } from "../../shared/infrastructure/database/interfaces/mongo-doc.type";
-import { ScraperConfig } from "../../shared/infrastructure/database/interfaces/scraper-config.interface";
+import { ScraperConfig } from "../../shared/domain/scraper-config.interface";
 import { getPdfReport } from "./application/get-pdf-report";
 import { logger } from "../../shared/infrastructure/logging";
-import { Report } from "../../shared/infrastructure/database/interfaces/report.interface";
+import { Report } from "../../shared/domain/report.interface";
 import { ReportModel } from "../../shared/infrastructure/database/models/report.model";
 import { reportValidationSchema } from "../../shared/infrastructure/validation/schemas/report.validation-schema";
 import { validateOne } from "../../shared/infrastructure/validation";
@@ -59,12 +58,12 @@ async function run(): Promise<void> {
   );
   logger.info(`[SCRAPER] Parsing report...`);
   const parsedPdf = await pdfParse(pdfBuffer);
-  const parsedReport: ParsedReport = parseReport(parsedPdf.text);
+  const parsedReport: Report = parseReport(parsedPdf.text);
   logger.info(`[SCRAPER] Parsing report... OK`);
   const report: Report = validateOne(
     {
       timestamp: parsedReport.timestamp,
-      data: parsedReport.autonomousCommunitiesData
+      data: parsedReport.data
     },
     reportValidationSchema
   );

@@ -1,5 +1,5 @@
 import * as autonomousCommunitiesData from "../data/autonomous-communities.json";
-import * as reportsData from "../data/metrics.json";
+import * as reportsData from "../data/reports.json";
 import * as scraperConfigData from "../data/scraper-config.json";
 import { scraperConfigValidationSchema } from "../../../shared/infrastructure/validation/schemas/scraper-config.validation-schema";
 import {
@@ -7,11 +7,11 @@ import {
   validateMany
 } from "../../../shared/infrastructure/validation";
 import { reportValidationSchema } from "../../../shared/infrastructure/validation/schemas/report.validation-schema";
-import { Report } from "../../../shared/infrastructure/database/interfaces/report.interface";
+import { Report } from "../../../shared/domain/report.interface";
 import { ReportModel } from "../../../shared/infrastructure/database/models/report.model";
-import { ScraperConfig } from "../../../shared/infrastructure/database/interfaces/scraper-config.interface";
+import { ScraperConfig } from "../../../shared/domain/scraper-config.interface";
 import { ScraperConfigModel } from "../../../shared/infrastructure/database/models/scraper-config.model";
-import { AutonomousCommunity } from "../../../shared/infrastructure/database/interfaces/autonomous-community.interface";
+import { AutonomousCommunity } from "../../../shared/domain/autonomous-community.interface";
 import { autonomousCommunityValidationSchema } from "../../../shared/infrastructure/validation/schemas/autonomous-community.validation-schema";
 import { AutonomousCommunityModel } from "../../../shared/infrastructure/database/models/autonomous-community.model";
 

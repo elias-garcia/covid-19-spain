@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { getAllAutonomousCommunities } from "../../../application/autonomous-communities/get-all-autonomous-communities";
-import { AutonomousCommunity } from "../../../../../shared/infrastructure/database/interfaces/autonomous-community.interface";
+import { AutonomousCommunity } from "../../../../../shared/domain/autonomous-community.interface";
 import { autonomousCommunityDocsToDtos } from "../../dtos/autonomous-community.dto-converter";
 import { HttpOkResponse } from "../http-responses";
 

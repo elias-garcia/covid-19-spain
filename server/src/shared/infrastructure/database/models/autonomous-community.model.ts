@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 import { MongoDoc } from "../interfaces/mongo-doc.type";
-import { AutonomousCommunity } from "../interfaces/autonomous-community.interface";
+import { AutonomousCommunity } from "../../../domain/autonomous-community.interface";
 
 export { AutonomousCommunityModel };
 
