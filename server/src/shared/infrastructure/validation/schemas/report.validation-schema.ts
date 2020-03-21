@@ -10,8 +10,8 @@ const autonomousCommunityDataValidationSchema: yup.Schema<AutonomousCommunityDat
   .shape({
     autonomousCommunity: yup.string().required(),
     values: yup.object().shape({
-      casos: yup.number().required(),
-      fallecidos: yup.number().required()
+      cases: yup.number().required(),
+      deaths: yup.number().required()
     })
   });
 

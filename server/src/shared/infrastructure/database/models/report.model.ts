@@ -13,11 +13,11 @@ const reportDataSchema = new Schema<AutonomousCommunityData>(
       required: true
     },
     values: {
-      casos: {
+      cases: {
         type: Schema.Types.Number,
         required: true
       },
-      fallecidos: {
+      deaths: {
         type: Schema.Types.Number,
         required: true
       }

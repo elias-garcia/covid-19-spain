@@ -24,20 +24,20 @@ function parseRowValues(values: number[]): AutonomousCommunityData["values"] {
   switch (values.length) {
     case 2: {
       return {
-        casos: values[0],
-        fallecidos: values[1]
+        cases: values[0],
+        deaths: values[1]
       };
     }
     case 3: {
       return {
-        casos: values[0],
-        fallecidos: values[2]
+        cases: values[0],
+        deaths: values[2]
       };
     }
     case 4: {
       return {
-        casos: values[0],
-        fallecidos: values[3]
+        cases: values[0],
+        deaths: values[3]
       };
     }
     default: {

@@ -1,6 +1,6 @@
 export { Field, AutonomousCommunityData };
 
-type Field = "casos" | "fallecidos";
+type Field = "cases" | "deaths";
 
 interface AutonomousCommunityData {
   readonly autonomousCommunity: string;
