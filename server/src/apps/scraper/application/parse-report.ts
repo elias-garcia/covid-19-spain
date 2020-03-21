@@ -28,6 +28,12 @@ function parseRowValues(values: number[]): AutonomousCommunityData["values"] {
         fallecidos: values[1]
       };
     }
+    case 3: {
+      return {
+        casos: values[0],
+        fallecidos: values[2]
+      };
+    }
     case 4: {
       return {
         casos: values[0],
@@ -138,7 +144,7 @@ function parseReport(text: string): ParsedReport {
   const parsedDate: string = parseDate(text);
   const tableRows: string[] = parseTable(text);
   const parsedAutonomousCommunitiesData: AutonomousCommunityData[] = parseTableRows(
-    tableRows.slice(1, tableRows.length - 1)
+    tableRows
   );
 
   return {
