@@ -42,7 +42,7 @@ async function getPdfReport(reportIndex: number): Promise<ArrayBuffer> {
       }
     } catch (error) {
       const { message } = error as AxiosError;
-      logger.warn(`[SCRAPER] Fetching report... ERR - ${message}`);
+      logger.warn(`[SCRAPER] Fetching report... ${message}`);
     }
   }
 
