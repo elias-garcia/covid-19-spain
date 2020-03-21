@@ -5,7 +5,7 @@ import { ParsingError } from "../domain/parsing.error";
 export { parseReport };
 
 function parseNumericValue(value: string): number {
-  return Number(value.replace(",", "."));
+  return Number(value.replace(".", "").replace(",", "."));
 }
 
 function normalizeString(value: string): string {
