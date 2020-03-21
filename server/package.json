@@ -7,7 +7,7 @@
     "prebuild": "rm -rf dist",
     "build": "tsc",
     "lint": "tslint -p .",
-    "start:dev": "nodemon",
+    "start:dev": "nodemon -L",
     "start:prod": "node dist/main.js"
   },
   "author": "",
