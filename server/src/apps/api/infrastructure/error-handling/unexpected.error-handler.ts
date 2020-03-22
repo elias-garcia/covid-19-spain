@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { ValidationError } from "yup";
 
 import { HttpErrorResponse } from "../http/http-responses";
+import { logger } from "../../../../shared/infrastructure/logging";
 
 export { unexpectedErrorHandler };
 
@@ -11,6 +12,7 @@ function unexpectedErrorHandler(
   response: Response<HttpErrorResponse>,
   _next: NextFunction
 ): Response<HttpErrorResponse> {
+  logger.error(`[API] ${error.message} - ${error.stack}`);
   if (error instanceof ValidationError) {
     return response.status(422).json({ message: error.errors });
   }
