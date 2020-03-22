@@ -1,0 +1,13 @@
+import { MongoDoc } from "../../../../shared/infrastructure/database/interfaces/mongo-doc.type";
+import { ReportData } from "../../../../shared/domain/report.interface";
+
+export { accumulatedValuesDocToDto };
+
+function accumulatedValuesDocToDto(
+  doc: MongoDoc<ReportData["values"]>
+): ReportData["values"] {
+  return {
+    cases: doc.cases,
+    deaths: doc.deaths
+  };
+}
