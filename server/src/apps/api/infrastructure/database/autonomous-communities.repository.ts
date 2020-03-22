@@ -4,6 +4,12 @@ import { AutonomousCommunityModel } from "../../../../shared/infrastructure/data
 
 export { getAll };
 
+const SORT_ORDER: Partial<Record<keyof AutonomousCommunity, 1 | -1>> = {
+  name: 1
+};
+
 async function getAll(): Promise<MongoDoc<AutonomousCommunity>[]> {
-  return AutonomousCommunityModel.find().exec();
+  return AutonomousCommunityModel.find()
+    .sort(SORT_ORDER)
+    .exec();
 }

@@ -7,6 +7,8 @@ import { ReportModel } from "../../../../shared/infrastructure/database/models/r
 
 export { getAll };
 
+const SORT_ORDER: Partial<Record<keyof Report, 1 | -1>> = { timestamp: 1 };
+
 function buildGetAllFiltersQuery(
   filters: ReportsFilters
 ): MongooseFilterQuery<MongoDoc<Report>> {
@@ -53,7 +55,9 @@ async function getAll(filters: ReportsFilters): Promise<MongoDoc<Report>[]> {
   const filtersQuery = buildGetAllFiltersQuery(filters);
 
   if (filters.autonomousCommunities === undefined) {
-    return ReportModel.find(filtersQuery);
+    return ReportModel.find(filtersQuery)
+      .sort(SORT_ORDER)
+      .exec();
   }
 
   const aggregationPipeline = buildGetAllAggregationPipeline(
@@ -61,5 +65,7 @@ async function getAll(filters: ReportsFilters): Promise<MongoDoc<Report>[]> {
     filters.autonomousCommunities
   );
 
-  return ReportModel.aggregate(aggregationPipeline).exec();
+  return ReportModel.aggregate(aggregationPipeline)
+    .sort(SORT_ORDER)
+    .exec();
 }
