@@ -10,5 +10,5 @@ const configValidationSchema: yup.Schema<Config> = yup.object().shape<Config>({
     .oneOf(["development", "production"])
     .required(),
   API_PORT: yup.number().required(),
-  MONGO_URI: yup.string().required()
+  MONGODB_URI: yup.string().required()
 });
