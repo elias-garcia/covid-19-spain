@@ -1,4 +1,4 @@
-# COVID-19 Spain
+# COVID-19 Spain ![Heroku CD](https://github.com/elias-garcia/covid-19-spain/workflows/Heroku%20CD/badge.svg)
 
 The aim of this project is to normalize and centralize data from the daily
 reports made by the spanish government about the COVID-19 pandemic and expose
