@@ -20,7 +20,7 @@ The REST API is publicly available at
 # How does it works?
 
 The spanish government publish a daily report about the COVID-19 disease in a
-`.pdf` format. The application runs an scraper hourly using a cron job that will
+pdf format. The application runs an scraper hourly using a cron job that will
 try to fetch the next report. If it's available, it will parse its content and
 store it in MongoDB.
 
