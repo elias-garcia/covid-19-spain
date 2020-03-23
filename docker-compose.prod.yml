@@ -6,4 +6,3 @@ services:
       target: production
     ports:
       - "80:80"
-    command: ["wait-for-it", "database:27017", "--", "npm run start:prod"]

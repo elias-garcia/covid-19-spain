@@ -9,4 +9,3 @@ services:
       - /usr/src/covid-19-spain-server/node_modules
     ports:
       - "3000:3000"
-    command: ["wait-for-it", "database:27017", "--", "npm run start:dev"]
