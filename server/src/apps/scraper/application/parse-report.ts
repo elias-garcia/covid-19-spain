@@ -45,6 +45,12 @@ function parseRowValues(values: number[]): ReportData["values"] {
         deaths: values[4]
       };
     }
+    case 7: {
+      return {
+        cases: values[0],
+        deaths: values[4]
+      };
+    }
     default: {
       throw new ParsingError(
         `I can only parse tables with 4 columns. This has ${values.length}`
