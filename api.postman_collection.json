@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "ce0f288d-58b2-40fc-b85d-d740008b405a",
+		"name": "Covid-19 Spain Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autonomous Communities",
+			"item": [
+				{
+					"name": "Get All Autonomous Communities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/autonomous-communities",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autonomous-communities"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Get All Reports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/reports?from=2020-03-20&to=2020-03-21&autonomousCommunities=galicia,madrid",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"reports"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2020-03-20"
+								},
+								{
+									"key": "to",
+									"value": "2020-03-21"
+								},
+								{
+									"key": "autonomousCommunities",
+									"value": "galicia,madrid"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Accumulated Values",
+			"item": [
+				{
+					"name": "Get Accumulated Values",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4a6a9e3e-5339-4676-9c3c-d6bb3b886807",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "bee9e758-79ff-45c5-a7af-ea1e7615f69c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6a65352c-16ef-4f2e-ba5a-a66e65f70281",
+			"key": "apiUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
