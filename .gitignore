@@ -1,4 +1,35 @@
-**/node_modules
-**/dist
-**/.env
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# 1. Common
+
+# misc
+**/.DS_Store
+**/npm-debug.log*
+
+# mongodb
 data
+
+# dependencies
+**/node_modules
+
+# 2. Backend
+
+# artifacts
+server/dist
+
+# env files
+server/.env
+
+# 3. Frontend
+
+# env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# testing
+frontend/coverage
+
+# artifacts
+frontend/build
