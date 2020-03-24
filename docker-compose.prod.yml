@@ -4,9 +4,13 @@ services:
   server:
     build:
       target: production
-    ports:
-      - "80:80"
 
   database:
     volumes:
       - ./data:/data/db
+
+  frontend:
+    build:
+      target: production
+    ports:
+      - "80:80"
