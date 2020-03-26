@@ -2,6 +2,8 @@ import { Theme, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
+    display: "flex",
+    flexDirection: "column",
     padding: theme.spacing(2),
     minHeight: "calc(100vh - (56px + 40px))",
     [`${theme.breakpoints.up("xs")} and (orientation: landscape)`]: {

@@ -36,7 +36,7 @@ const dashboardReducer: Reducer = (
       return {
         ...state,
         reports: {
-          step: "pending",
+          step: "loading",
         },
       };
     }
@@ -61,15 +61,15 @@ const dashboardReducer: Reducer = (
     case LOAD_ACCUMULATED_VALUES: {
       return {
         ...state,
-        reports: {
-          step: "pending",
+        accumulatedValues: {
+          step: "loading",
         },
       };
     }
     case LOAD_ACCUMULATED_VALUES_SUCCESS: {
       return {
         ...state,
-        reports: {
+        accumulatedValues: {
           step: "successful",
           result: action.accumulatedValues,
         },
@@ -78,7 +78,7 @@ const dashboardReducer: Reducer = (
     case LOAD_ACCUMULATED_VALUES_ERROR: {
       return {
         ...state,
-        reports: {
+        accumulatedValues: {
           step: "failed",
           message: action.message,
         },
