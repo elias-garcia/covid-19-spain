@@ -6,6 +6,4 @@ export interface ToggleThemeAction {
 
 export type AppAction = ToggleThemeAction;
 
-export const toggleTheme = (): ToggleThemeAction => {
-  return { type: TOGGLE_THEME };
-};
+export const toggleTheme = (): AppAction => ({ type: TOGGLE_THEME });

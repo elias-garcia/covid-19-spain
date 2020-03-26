@@ -24,6 +24,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-observable": "^1.2.0",
+    "rxjs": "^6.5.4",
     "serve": "^11.3.0",
     "styled-components": "^5.0.1",
     "tslint": "^6.1.0",

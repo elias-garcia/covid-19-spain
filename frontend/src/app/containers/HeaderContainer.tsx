@@ -6,13 +6,15 @@ import Header, {
   HeaderStateProps,
   HeaderHandlerProps,
 } from "../components/Header/Header";
-import { toggleTheme } from "../reducers/app.actions";
+import { toggleTheme, AppAction } from "../reducers/app.actions";
 
 const mapStateToProps = (state: State): HeaderStateProps => ({
   appTitle: state.app.title,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch): HeaderHandlerProps => ({
+const mapDispatchToProps = (
+  dispatch: Dispatch<AppAction>
+): HeaderHandlerProps => ({
   onToggleTheme: () => dispatch(toggleTheme()),
 });
 

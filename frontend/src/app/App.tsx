@@ -6,9 +6,9 @@ import { connect } from "react-redux";
 import State from "../store/state";
 import createMaterialTheme from "../styles/create-material-theme";
 import HeaderContainer from "./containers/HeaderContainer";
-import MainContent from "./components/MainContent";
-import Dashboard from "./views/Dashboard";
+import MainContent from "./components/MainContent/MainContent";
 import FooterContainer from "./containers/FooterContainer";
+import DashboardContainer from "./views/dashboard/containers/DashboardContainer";
 
 interface AppProps {
   readonly themeType: "light" | "dark";
@@ -22,7 +22,7 @@ const App: React.FC<AppProps> = ({ themeType }: AppProps) => {
       <CssBaseline />
       <HeaderContainer />
       <MainContent>
-        <Dashboard></Dashboard>
+        <DashboardContainer />
       </MainContent>
       <FooterContainer />
     </ThemeProvider>
