@@ -26,11 +26,14 @@ pdf format. The application runs an scraper hourly using a cron job that will
 try to fetch the next report. If it's available, it will parse its content and
 store it in MongoDB.
 
-All of the published reports are very different between them, so by the moment
-the application is just storing those values which are common to all of them:
+All of the published reports are very different between them, so you can expect
+`null` values for a field not present in a report.
 
 - **Cases**: The number of COVID-19 confirmed cases.
 - **Deaths**: The number of deaths due to the COVID-19 disease.
+- **Hospitalized**: The number of people hospitalized.
+- **ICU**: The number of people in intensive care unit.
+- **Recovered**: The number of people who recovered from the COVID-19 disease.
 
 All this data will be then available through the API.
 

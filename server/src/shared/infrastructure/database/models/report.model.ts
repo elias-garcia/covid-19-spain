@@ -5,6 +5,9 @@ import { MongoDoc } from "../interfaces/mongo-doc.type";
 
 export { ReportModel };
 
+const isNullableFieldRequired = (value: unknown) =>
+  value === null || typeof value === "number" || value instanceof Number;
+
 const reportDataSchema = new Schema<ReportData>(
   {
     autonomousCommunity: {
@@ -17,8 +20,17 @@ const reportDataSchema = new Schema<ReportData>(
         required: true
       },
       deaths: {
+        type: Schema.Types.Number
+      },
+      hospitalized: {
+        type: Schema.Types.Number
+      },
+      icu: {
+        type: Schema.Types.Number
+      },
+      recovered: {
         type: Schema.Types.Number,
-        required: true
+        required: isNullableFieldRequired
       }
     }
   },
