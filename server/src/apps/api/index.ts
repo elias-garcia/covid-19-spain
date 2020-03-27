@@ -1,5 +1,6 @@
 import * as express from "express";
 import * as expressPino from "express-pino-logger";
+import * as cors from "cors";
 
 import { config } from "../../shared/infrastructure/config/config";
 import { logger } from "../../shared/infrastructure/logging";
@@ -15,6 +16,7 @@ function bootstrap(): void {
   const app: express.Express = express();
 
   app.use(expressPino({ logger }));
+  app.use(cors());
 
   app.use("/autonomous-communities", autonomousCommunitiesRouter);
   app.use("/reports", reportsRouter);
