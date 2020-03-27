@@ -8,6 +8,9 @@ function accumulatedValuesDocToDto(
 ): ReportData["values"] {
   return {
     cases: doc.cases,
-    deaths: doc.deaths
+    deaths: doc.deaths,
+    hospitalized: doc.hospitalized,
+    icu: doc.icu,
+    recovered: doc.recovered
   };
 }

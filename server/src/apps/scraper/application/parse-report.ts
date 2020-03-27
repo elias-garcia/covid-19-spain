@@ -24,31 +24,46 @@ function parseRowValues(values: number[]): ReportData["values"] {
     case 2: {
       return {
         cases: values[0],
-        deaths: values[1]
+        deaths: values[1],
+        hospitalized: null,
+        icu: null,
+        recovered: null
       };
     }
     case 3: {
       return {
         cases: values[0],
-        deaths: values[2]
+        deaths: values[2],
+        hospitalized: null,
+        icu: null,
+        recovered: null
       };
     }
     case 4: {
       return {
         cases: values[0],
-        deaths: values[3]
+        deaths: values[3],
+        hospitalized: null,
+        icu: values[2],
+        recovered: null
       };
     }
     case 6: {
       return {
         cases: values[0],
-        deaths: values[4]
+        deaths: values[4],
+        hospitalized: values[2],
+        icu: values[3],
+        recovered: null
       };
     }
     case 7: {
       return {
         cases: values[0],
-        deaths: values[4]
+        deaths: values[4],
+        hospitalized: values[2],
+        icu: values[3],
+        recovered: values[5]
       };
     }
     default: {
