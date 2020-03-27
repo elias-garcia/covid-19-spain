@@ -146,13 +146,17 @@ function parseTable(text: string): string[] {
   );
 }
 
-function formatDateMember(value: string): string {
+function formatDayOrMonth(value: string): string {
   return value.length === 1 ? `0${value}` : value;
+}
+
+function formatYear(value: string): string {
+  return value.length === 2 ? `20${value}` : value;
 }
 
 function parseDate(text: string): string {
   const regExpMatch: RegExpMatchArray | null = text.match(
-    /[0-9]{1,2}.[0-9]{1,2}.[0-9]{4}/
+    /[0-9]{1,2}.[0-9]{1,2}.[0-9]{2,4}/g
   );
 
   if (regExpMatch === null) {
@@ -160,10 +164,11 @@ function parseDate(text: string): string {
   }
 
   const [day, month, year] = regExpMatch[0].split(".");
+  const formattedYear = formatYear(year);
+  const formattedMonth = formatDayOrMonth(month);
+  const formattedDay = formatDayOrMonth(day);
 
-  return `${year}-${formatDateMember(month)}-${formatDateMember(
-    day
-  )}T00:00:00Z`;
+  return `${formattedYear}-${formattedMonth}-${formattedDay}T00:00:00Z`;
 }
 
 function parseReport(text: string): Report {
