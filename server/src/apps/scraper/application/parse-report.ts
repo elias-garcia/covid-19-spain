@@ -8,7 +8,7 @@ function parseNumericValue(value: string): number {
 }
 
 function normalizeString(value: string): string {
-  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return value.normalize("NFD").replace(/[^a-zA-Z0-9-.\s\n\r]/g, "");
 }
 
 function normalizeWhiteSpaces(value: string): string {
