@@ -1,9 +1,9 @@
 import * as reportsRepository from "../../infrastructure/database/reports.repository";
-import { ReportData } from "../../../../shared/domain/report.interface";
 import { MongoDoc } from "../../../../shared/infrastructure/database/interfaces/mongo-doc.type";
+import { AccumulatedValues } from "../../../../shared/domain/accumulated-values.interface";
 
 export { getAccumulatedValues };
 
-async function getAccumulatedValues(): Promise<MongoDoc<ReportData["values"]>> {
+async function getAccumulatedValues(): Promise<MongoDoc<AccumulatedValues>> {
   return reportsRepository.getAccumulatedValues();
 }

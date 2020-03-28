@@ -1,17 +1,17 @@
 import { Request, Response, NextFunction } from "express";
 
 import { HttpOkResponse } from "../http-responses";
-import { ReportData } from "../../../../../shared/domain/report.interface";
 import { getAccumulatedValues } from "../../../application/accumulated-values/get-accumulated-values";
 import { accumulatedValuesDocToDto } from "../../dtos/accumulated-values.dto-converter";
+import { AccumulatedValues } from "../../../../../shared/domain/accumulated-values.interface";
 
 export { getAll };
 
 async function getAll(
   _request: Request,
-  response: Response<HttpOkResponse<ReportData["values"]>>,
+  response: Response<HttpOkResponse<AccumulatedValues>>,
   next: NextFunction
-): Promise<Response<HttpOkResponse<ReportData["values"]>> | void> {
+): Promise<Response<HttpOkResponse<AccumulatedValues>> | void> {
   try {
     const accumulatedValuesDoc = await getAccumulatedValues();
     const accumulatedValuesDto = accumulatedValuesDocToDto(

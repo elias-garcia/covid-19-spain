@@ -92,7 +92,8 @@ contains the values reported for each autonomous community.
 
 ## GET /accumulated-values
 
-Get the accumulated values for the last report available.
+Get the accumulated values for the latest report available and the diff with the
+previous one.
 
 # License
 
