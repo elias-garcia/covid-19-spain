@@ -24,31 +24,46 @@ function parseRowValues(values: number[]): ReportData["values"] {
     case 2: {
       return {
         cases: values[0],
-        deaths: values[1]
+        deaths: values[1],
+        hospitalized: null,
+        icu: null,
+        recovered: null
       };
     }
     case 3: {
       return {
         cases: values[0],
-        deaths: values[2]
+        deaths: values[2],
+        hospitalized: null,
+        icu: null,
+        recovered: null
       };
     }
     case 4: {
       return {
         cases: values[0],
-        deaths: values[3]
+        deaths: values[3],
+        hospitalized: null,
+        icu: values[2],
+        recovered: null
       };
     }
     case 6: {
       return {
         cases: values[0],
-        deaths: values[4]
+        deaths: values[4],
+        hospitalized: values[2],
+        icu: values[3],
+        recovered: null
       };
     }
     case 7: {
       return {
         cases: values[0],
-        deaths: values[4]
+        deaths: values[4],
+        hospitalized: values[2],
+        icu: values[3],
+        recovered: values[5]
       };
     }
     default: {
@@ -131,13 +146,17 @@ function parseTable(text: string): string[] {
   );
 }
 
-function formatDateMember(value: string): string {
+function formatDayOrMonth(value: string): string {
   return value.length === 1 ? `0${value}` : value;
+}
+
+function formatYear(value: string): string {
+  return value.length === 2 ? `20${value}` : value;
 }
 
 function parseDate(text: string): string {
   const regExpMatch: RegExpMatchArray | null = text.match(
-    /[0-9]{1,2}.[0-9]{1,2}.[0-9]{4}/
+    /[0-9]{1,2}.[0-9]{1,2}.[0-9]{2,4}/g
   );
 
   if (regExpMatch === null) {
@@ -145,10 +164,11 @@ function parseDate(text: string): string {
   }
 
   const [day, month, year] = regExpMatch[0].split(".");
+  const formattedYear = formatYear(year);
+  const formattedMonth = formatDayOrMonth(month);
+  const formattedDay = formatDayOrMonth(day);
 
-  return `${year}-${formatDateMember(month)}-${formatDateMember(
-    day
-  )}T00:00:00Z`;
+  return `${formattedYear}-${formattedMonth}-${formattedDay}T00:00:00Z`;
 }
 
 function parseReport(text: string): Report {

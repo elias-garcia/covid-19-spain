@@ -6,133 +6,190 @@
         "autonomousCommunity": "andalucia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "aragon",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "asturias",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "baleares",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "canarias",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cantabria",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-la-mancha",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-y-leon",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cataluna",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "ceuta",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "c-valencia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "extremadura",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "galicia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "madrid",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "melilla",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "murcia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "navarra",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "pais-vasco",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "la-rioja",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       }
     ]
@@ -144,133 +201,190 @@
         "autonomousCommunity": "andalucia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "aragon",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "asturias",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "baleares",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "canarias",
         "values": {
           "cases": 4,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cantabria",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-la-mancha",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-y-leon",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cataluna",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "ceuta",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "c-valencia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "extremadura",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "galicia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "madrid",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "melilla",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "murcia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "navarra",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "pais-vasco",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "la-rioja",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       }
     ]
@@ -282,133 +396,190 @@
         "autonomousCommunity": "andalucia",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "aragon",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "asturias",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "baleares",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "canarias",
         "values": {
           "cases": 2,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cantabria",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-la-mancha",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-y-leon",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cataluna",
         "values": {
           "cases": 2,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "ceuta",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "c-valencia",
         "values": {
           "cases": 2,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "extremadura",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "galicia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "madrid",
         "values": {
           "cases": 4,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "melilla",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "murcia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "navarra",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "pais-vasco",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "la-rioja",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       }
     ]
@@ -420,133 +591,190 @@
         "autonomousCommunity": "andalucia",
         "values": {
           "cases": 5,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "aragon",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "asturias",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "baleares",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "canarias",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cantabria",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-la-mancha",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-y-leon",
         "values": {
           "cases": 2,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cataluna",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "ceuta",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "c-valencia",
         "values": {
           "cases": 6,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "extremadura",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "galicia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "madrid",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "melilla",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "murcia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "navarra",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "pais-vasco",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "la-rioja",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       }
     ]
@@ -558,133 +786,190 @@
         "autonomousCommunity": "andalucia",
         "values": {
           "cases": 6,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "aragon",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "asturias",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "baleares",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "canarias",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cantabria",
         "values": {
           "cases": 10,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-la-mancha",
         "values": {
           "cases": 3,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-y-leon",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cataluna",
         "values": {
           "cases": 12,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "ceuta",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "c-valencia",
         "values": {
           "cases": 7,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "extremadura",
         "values": {
           "cases": 6,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "galicia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "madrid",
         "values": {
           "cases": 24,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "melilla",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "murcia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "navarra",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "pais-vasco",
         "values": {
           "cases": 9,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "la-rioja",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       }
     ]
@@ -696,133 +981,190 @@
         "autonomousCommunity": "andalucia",
         "values": {
           "cases": 7,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "aragon",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "asturias",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "baleares",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "canarias",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cantabria",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-la-mancha",
         "values": {
           "cases": 4,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-y-leon",
         "values": {
           "cases": 5,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cataluna",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "ceuta",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "c-valencia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "extremadura",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "galicia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "madrid",
         "values": {
           "cases": 20,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "melilla",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "murcia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "navarra",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "pais-vasco",
         "values": {
           "cases": 4,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "la-rioja",
         "values": {
           "cases": 2,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       }
     ]
@@ -834,133 +1176,190 @@
         "autonomousCommunity": "andalucia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": 1,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "aragon",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "asturias",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": 1,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "baleares",
         "values": {
           "cases": 3,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "canarias",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cantabria",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-la-mancha",
         "values": {
           "cases": 5,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": 1,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "castilla-y-leon",
         "values": {
           "cases": 3,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": 1,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "cataluna",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "ceuta",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "c-valencia",
         "values": {
           "cases": 4,
-          "deaths": 1
+          "deaths": 1,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "extremadura",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "galicia",
         "values": {
           "cases": 1,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "madrid",
         "values": {
           "cases": 21,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": 1,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "melilla",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "murcia",
         "values": {
           "cases": 0,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "navarra",
         "values": {
           "cases": 2,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": 1,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "pais-vasco",
         "values": {
           "cases": 4,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       },
       {
         "autonomousCommunity": "la-rioja",
         "values": {
           "cases": 4,
-          "deaths": 0
+          "deaths": 0,
+          "hospitalized": null,
+          "icu": null,
+          "recovered": null
         }
       }
     ]

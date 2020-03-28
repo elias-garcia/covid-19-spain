@@ -77,7 +77,10 @@ function buildGetAccumulatedValuesAggregationPipeline(): {}[] {
     {
       $project: {
         cases: { $sum: "$data.values.cases" },
-        deaths: { $sum: "$data.values.deaths" }
+        deaths: { $sum: "$data.values.deaths" },
+        hospitalized: { $sum: "$data.values.hospitalized" },
+        icu: { $sum: "$data.values.icu" },
+        recovered: { $sum: "$data.values.recovered" }
       }
     }
   ];

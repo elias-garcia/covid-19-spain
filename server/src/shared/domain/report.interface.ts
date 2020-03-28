@@ -1,10 +1,12 @@
 export { Report, ReportData };
 
-type Field = "cases" | "deaths";
+type Field = "cases" | "deaths" | "hospitalized" | "icu" | "recovered";
 
 interface ReportData {
   readonly autonomousCommunity: string;
-  readonly values: Record<Field, number>;
+  readonly values: {
+    [key in Field]: key extends "cases" | "deaths" ? number : number | null;
+  };
 }
 
 interface Report {
