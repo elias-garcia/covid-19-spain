@@ -12,9 +12,7 @@ const Footer: React.FC<FooterProps> = ({ appTitle }) => {
 
   return (
     <footer className={classes.root}>
-      <Typography>
-        {appTitle} is an open source project by Elías García
-      </Typography>
+      <Typography>{appTitle} by Elías García</Typography>
     </footer>
   );
 };

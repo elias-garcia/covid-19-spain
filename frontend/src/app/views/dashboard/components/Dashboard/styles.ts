@@ -1,12 +1,17 @@
 import { makeStyles, Theme } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  pageWrapper: {
+  pageLoadingWrapper: {
     flex: 1,
     height: "100%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+  },
+  pageLoadedWrapper: {
+    flex: 1,
+    height: "100%",
+    width: "100%",
   },
   loadingWrapper: {
     display: "flex",
@@ -16,6 +21,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   loadingText: {
     marginTop: theme.spacing(2),
+  },
+  title: {
+    marginBottom: 24,
   },
 }));
 

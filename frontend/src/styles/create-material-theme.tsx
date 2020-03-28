@@ -5,6 +5,13 @@ const createMaterialTheme = (themeType: "light" | "dark"): Theme => {
     palette: {
       type: themeType,
     },
+    overrides: {
+      MuiCardContent: {
+        root: {
+          padding: 24,
+        },
+      },
+    },
   });
 };
 

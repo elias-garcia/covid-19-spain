@@ -1,5 +1,10 @@
-import Report from "./report.interface";
+import { Field } from "./report.interface";
 
-type AccumulatedValues = Report["data"];
+type AccumulatedValues = {
+  [key in Field]: {
+    readonly total: number;
+    readonly diffWithYesterday: number;
+  };
+};
 
 export default AccumulatedValues;
