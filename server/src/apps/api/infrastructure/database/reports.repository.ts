@@ -2,8 +2,9 @@ import { MongooseFilterQuery } from "mongoose";
 
 import { ReportsFilters } from "../../domain/reports-filters.interface";
 import { MongoDoc } from "../../../../shared/infrastructure/database/interfaces/mongo-doc.type";
-import { Report, ReportData } from "../../../../shared/domain/report.interface";
+import { Report } from "../../../../shared/domain/report.interface";
 import { ReportModel } from "../../../../shared/infrastructure/database/models/report.model";
+import { AccumulatedValues } from "../../../../shared/domain/accumulated-values.interface";
 
 export { getAll, getAccumulatedValues };
 
@@ -73,20 +74,84 @@ async function getAll(filters: ReportsFilters): Promise<MongoDoc<Report>[]> {
 function buildGetAccumulatedValuesAggregationPipeline(): {}[] {
   return [
     { $sort: { timestamp: -1 } },
-    { $limit: 1 },
+    { $limit: 2 },
     {
       $project: {
-        cases: { $sum: "$data.values.cases" },
-        deaths: { $sum: "$data.values.deaths" },
-        hospitalized: { $sum: "$data.values.hospitalized" },
-        icu: { $sum: "$data.values.icu" },
-        recovered: { $sum: "$data.values.recovered" }
+        casesSum: { $sum: "$data.values.cases" },
+        deathsSum: { $sum: "$data.values.deaths" },
+        hospitalizedSum: { $sum: "$data.values.hospitalized" },
+        icuSum: { $sum: "$data.values.icu" },
+        recoveredSum: { $sum: "$data.values.recovered" }
+      }
+    },
+    {
+      $group: {
+        _id: null,
+        groupedCases: { $first: "$casesSum" },
+        casesElems: { $push: "$casesSum" },
+        groupedDeaths: { $first: "$deathsSum" },
+        deathsElems: { $push: "$deathsSum" },
+        groupedHospitalized: { $first: "$hospitalizedSum" },
+        hospitalizedElems: { $push: "$hospitalizedSum" },
+        groupedIcu: { $first: "$icuSum" },
+        icuElems: { $push: "$icuSum" },
+        groupedRecovered: { $first: "$recoveredSum" },
+        recoveredElems: { $push: "$recoveredSum" }
+      }
+    },
+    {
+      $project: {
+        cases: {
+          total: "$groupedCases",
+          diffWithYesterday: {
+            $subtract: [
+              { $arrayElemAt: ["$casesElems", 0] },
+              { $arrayElemAt: ["$casesElems", 1] }
+            ]
+          }
+        },
+        deaths: {
+          total: "$groupedDeaths",
+          diffWithYesterday: {
+            $subtract: [
+              { $arrayElemAt: ["$deathsElems", 0] },
+              { $arrayElemAt: ["$deathsElems", 1] }
+            ]
+          }
+        },
+        hospitalized: {
+          total: "$groupedHospitalized",
+          diffWithYesterday: {
+            $subtract: [
+              { $arrayElemAt: ["$hospitalizedElems", 0] },
+              { $arrayElemAt: ["$hospitalizedElems", 1] }
+            ]
+          }
+        },
+        icu: {
+          total: "$groupedIcu",
+          diffWithYesterday: {
+            $subtract: [
+              { $arrayElemAt: ["$icuElems", 0] },
+              { $arrayElemAt: ["$icuElems", 1] }
+            ]
+          }
+        },
+        recovered: {
+          total: "$groupedRecovered",
+          diffWithYesterday: {
+            $subtract: [
+              { $arrayElemAt: ["$recoveredElems", 0] },
+              { $arrayElemAt: ["$recoveredElems", 1] }
+            ]
+          }
+        }
       }
     }
   ];
 }
 
-async function getAccumulatedValues(): Promise<MongoDoc<ReportData["values"]>> {
+async function getAccumulatedValues(): Promise<MongoDoc<AccumulatedValues>> {
   const aggregationPipeline = buildGetAccumulatedValuesAggregationPipeline();
   const aggregationResults = await ReportModel.aggregate(
     aggregationPipeline

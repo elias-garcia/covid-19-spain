@@ -1,4 +1,4 @@
-export { Report, ReportData };
+export { Field, Report, ReportData };
 
 type Field = "cases" | "deaths" | "hospitalized" | "icu" | "recovered";
 
