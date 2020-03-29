@@ -14,10 +14,10 @@ import {
   loadAccumulatedValuesSuccess,
   loadAccumulatedValuesError,
 } from "./dashboard.actions";
-import * as reportsApi from "../../../../shared/apis/reports.api";
-import * as accumulatedValuesApi from "../../../../shared/apis/accumulated-values.api";
-import Report from "../../../../shared/domain/report.interface";
-import AccumulatedValues from "../../../../shared/domain/accumulated-values.interface";
+import * as reportsApi from "../../../../api/reports.api";
+import * as accumulatedValuesApi from "../../../../api/accumulated-values.api";
+import Report from "../../../../domain/report.interface";
+import AccumulatedValues from "../../../../domain/accumulated-values.interface";
 
 export const loadDataEpic = (
   action$: ActionsObservable<DashboardAction>

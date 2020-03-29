@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
 
-import * as httpClient from "../interfaces/http-client";
+import * as httpClient from "../utils/http-client";
 import Report from "../domain/report.interface";
 
 const REPORTS_API_URL = `${process.env.REACT_APP_API_URL}/reports`;

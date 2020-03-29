@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import * as serviceWorker from "./serviceWorker";
-import App from "./app/App";
+import AppContainer from "./app/containers/AppContainer";
 import configureStore from "./store/configure-store";
 
 const store = configureStore();
@@ -11,7 +11,7 @@ const store = configureStore();
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <AppContainer />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

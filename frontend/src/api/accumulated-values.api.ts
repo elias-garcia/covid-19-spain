@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
 
-import * as httpClient from "../interfaces/http-client";
+import * as httpClient from "../utils/http-client";
 import AccumulatedValues from "../domain/accumulated-values.interface";
 
 const ACCUMULATED_VALUES_API_URL = `${process.env.REACT_APP_API_URL}/accumulated-values`;

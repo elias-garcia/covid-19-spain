@@ -1,5 +1,5 @@
-import { AppState } from "../app/reducers/app.reducer";
-import { DashboardState } from "../app/views/dashboard/reducers/dashboard.reducer";
+import { AppState } from "../app/store/app.reducer";
+import { DashboardState } from "../app/routes/dashboard/store/dashboard.reducer";
 
 interface State {
   readonly app: AppState;

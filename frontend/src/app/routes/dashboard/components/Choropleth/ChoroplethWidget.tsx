@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent, useTheme, useMediaQuery } from "@material-ui/core";
 import { ResponsiveChoropleth } from "@nivo/geo";
 
-import autonomousCommunitiesGeoData from "../../../../data/autonomous-communities.json";
+import autonomousCommunitiesGeoData from "../../../../../data/autonomous-communities.json";
 import useStyles from "./styles";
 import useNivoTheme from "../../../../../styles/nivo-theme";
 
@@ -13,7 +13,7 @@ interface ChoroplethDataItem {
 
 export type ChoroplethData = ChoroplethDataItem[];
 
-export interface ChoroplethProps {
+export interface ChoroplethWidgetProps {
   readonly data: ChoroplethData | undefined;
 }
 
@@ -53,7 +53,7 @@ const getProjectionData = (
   return { translation: [0.7, 3.66], scale: 1050 };
 };
 
-const Choropleth: React.FC<ChoroplethProps> = ({ data }) => {
+const ChoroplethWidget: React.FC<ChoroplethWidgetProps> = ({ data }) => {
   const theme = useTheme();
   const nivoTheme = useNivoTheme(theme);
   const classes = useStyles();
@@ -113,4 +113,4 @@ const Choropleth: React.FC<ChoroplethProps> = ({ data }) => {
   );
 };
 
-export default Choropleth;
+export default ChoroplethWidget;

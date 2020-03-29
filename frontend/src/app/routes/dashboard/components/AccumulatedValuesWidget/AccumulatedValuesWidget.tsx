@@ -2,22 +2,21 @@ import React from "react";
 import * as materialIcons from "@material-ui/icons";
 import { useTheme } from "@material-ui/core";
 
-import AccumulatedValues from "../../../../../shared/domain/accumulated-values.interface";
+import AccumulatedValues from "../../../../../domain/accumulated-values.interface";
 import AccumulatedValue from "../AccumulatedValue/AccumulatedValue";
-import { AsyncTask } from "../../../../../shared/interfaces/async-task";
 import useStyles from "./styles";
 
-export interface AccumulatedValuesGridProps {
-  readonly accumulatedValues: AsyncTask<AccumulatedValues>;
+export interface AccumulatedValuesWidgetProps {
+  readonly accumulatedValues: AccumulatedValues | undefined;
 }
 
-const AccumulatedValuesGrid: React.FC<AccumulatedValuesGridProps> = ({
+const AccumulatedValuesWidget: React.FC<AccumulatedValuesWidgetProps> = ({
   accumulatedValues,
 }) => {
   const theme = useTheme();
   const classes = useStyles();
 
-  if (accumulatedValues.step !== "successful") {
+  if (accumulatedValues === undefined) {
     return <></>;
   }
 
@@ -27,39 +26,39 @@ const AccumulatedValuesGrid: React.FC<AccumulatedValuesGridProps> = ({
         label="Cases"
         icon={materialIcons.People}
         color={theme.palette.primary.main}
-        total={accumulatedValues.result.cases.total}
-        diff={accumulatedValues.result.cases.diffWithYesterday}
+        total={accumulatedValues.cases.total}
+        diff={accumulatedValues.cases.diffWithYesterday}
       />
       <AccumulatedValue
         label="Hospitalized"
         icon={materialIcons.LocalHospital}
         color={theme.palette.info.main}
-        total={accumulatedValues.result.hospitalized.total}
-        diff={accumulatedValues.result.hospitalized.diffWithYesterday}
+        total={accumulatedValues.hospitalized.total}
+        diff={accumulatedValues.hospitalized.diffWithYesterday}
       />
       <AccumulatedValue
         label="ICU"
         icon={materialIcons.SentimentDissatisfied}
         color={theme.palette.warning.main}
-        total={accumulatedValues.result.icu.total}
-        diff={accumulatedValues.result.icu.diffWithYesterday}
+        total={accumulatedValues.icu.total}
+        diff={accumulatedValues.icu.diffWithYesterday}
       />
       <AccumulatedValue
         label="Deaths"
         icon={materialIcons.SentimentVeryDissatisfied}
         color={theme.palette.error.main}
-        total={accumulatedValues.result.deaths.total}
-        diff={accumulatedValues.result.deaths.diffWithYesterday}
+        total={accumulatedValues.deaths.total}
+        diff={accumulatedValues.deaths.diffWithYesterday}
       />
       <AccumulatedValue
         label="Recovered"
         icon={materialIcons.SentimentVerySatisfied}
         color={theme.palette.success.main}
-        total={accumulatedValues.result.recovered.total}
-        diff={accumulatedValues.result.recovered.diffWithYesterday}
+        total={accumulatedValues.recovered.total}
+        diff={accumulatedValues.recovered.diffWithYesterday}
       />
     </div>
   );
 };
 
-export default AccumulatedValuesGrid;
+export default AccumulatedValuesWidget;

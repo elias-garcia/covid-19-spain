@@ -6,7 +6,7 @@ import Header, {
   HeaderStateProps,
   HeaderHandlerProps,
 } from "../components/Header/Header";
-import { toggleTheme, AppAction } from "../reducers/app.actions";
+import { toggleTheme, AppAction } from "../store/app.actions";
 
 const mapStateToProps = (state: State): HeaderStateProps => ({
   appTitle: state.app.title,

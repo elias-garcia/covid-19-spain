@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { CircularProgress, Typography } from "@material-ui/core";
 
 import useStyles from "./styles";
-import AccumulatedValuesGridContainer from "../../containers/AccumulatedValuesGridContainer";
+import AccumulatedValuesWidgetContainer from "../../containers/AccumulatedValuesWidgetContainer";
 import DashboardTitle from "../DashboardTitle/DashboardTitle";
-import ChoroplethContainer from "../../containers/ChoroplethContainer";
+import ChoroplethContainer from "../../containers/ChoroplethWidgetContainer";
 
 export interface DashboardStateProps {
   readonly isInitialDataLoading: boolean;
@@ -40,7 +40,7 @@ const Dashboard: React.FC<DashboardProps> = ({
   return (
     <div className={classes.pageLoadedWrapper}>
       <DashboardTitle text="Accumulated values" marginTop={0} />
-      <AccumulatedValuesGridContainer />
+      <AccumulatedValuesWidgetContainer />
       <DashboardTitle text="Values by autonomous community" />
       <ChoroplethContainer />
     </div>

@@ -1,5 +1,5 @@
-import Report from "../../../../shared/domain/report.interface";
-import AccumulatedValues from "../../../../shared/domain/accumulated-values.interface";
+import Report from "../../../../domain/report.interface";
+import AccumulatedValues from "../../../../domain/accumulated-values.interface";
 
 export const LOAD_DATA = "[DASHBOARD] LOAD DATA";
 export const LOAD_REPORTS = "[DASHBOARD] LOAD REPORTS";

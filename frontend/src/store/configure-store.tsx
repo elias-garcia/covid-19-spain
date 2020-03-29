@@ -3,9 +3,9 @@ import { createEpicMiddleware, combineEpics } from "redux-observable";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 
 import State from "./state";
-import appReducer from "../app/reducers/app.reducer";
-import dashboardReducer from "../app/views/dashboard/reducers/dashboard.reducer";
-import * as dashboardEpics from "../app/views/dashboard/reducers/dashboard.epics";
+import appReducer from "../app/store/app.reducer";
+import dashboardReducer from "../app/routes/dashboard/store/dashboard.reducer";
+import * as dashboardEpics from "../app/routes/dashboard/store/dashboard.epics";
 
 const rootReducer = combineReducers<State>({
   app: appReducer,

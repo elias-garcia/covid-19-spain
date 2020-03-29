@@ -9,9 +9,9 @@ import {
   LOAD_ACCUMULATED_VALUES_ERROR,
   LOAD_ACCUMULATED_VALUES_SUCCESS,
 } from "./dashboard.actions";
-import Report from "../../../../shared/domain/report.interface";
-import AccumulatedValues from "../../../../shared/domain/accumulated-values.interface";
-import { AsyncTask } from "../../../../shared/interfaces/async-task";
+import Report from "../../../../domain/report.interface";
+import AccumulatedValues from "../../../../domain/accumulated-values.interface";
+import { AsyncTask } from "../../../../utils/async-task";
 
 export interface DashboardState {
   readonly reports: AsyncTask<Report[]>;

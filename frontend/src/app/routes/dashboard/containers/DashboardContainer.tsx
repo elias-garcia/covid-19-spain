@@ -5,7 +5,7 @@ import Dashboard, {
   DashboardStateProps,
   DashboardHandlerProps,
 } from "../components/Dashboard/Dashboard";
-import { loadData, DashboardAction } from "../reducers/dashboard.actions";
+import { loadData, DashboardAction } from "../store/dashboard.actions";
 import State from "../../../../store/state";
 
 const mapStateToProps = (state: State): DashboardStateProps => ({
