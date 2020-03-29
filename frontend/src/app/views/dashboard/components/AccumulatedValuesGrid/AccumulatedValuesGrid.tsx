@@ -17,49 +17,49 @@ const AccumulatedValuesGrid: React.FC<AccumulatedValuesGridProps> = ({
   const theme = useTheme();
   const classes = useStyles();
 
-  if (accumulatedValues.step === "successful") {
-    return (
-      <div className={classes.root}>
-        <AccumulatedValue
-          label="Cases"
-          icon={materialIcons.People}
-          color={theme.palette.primary.main}
-          total={accumulatedValues.result.cases.total}
-          diff={accumulatedValues.result.cases.diffWithYesterday}
-        />
-        <AccumulatedValue
-          label="Hospitalized"
-          icon={materialIcons.LocalHospital}
-          color={theme.palette.info.main}
-          total={accumulatedValues.result.hospitalized.total}
-          diff={accumulatedValues.result.hospitalized.diffWithYesterday}
-        />
-        <AccumulatedValue
-          label="ICU"
-          icon={materialIcons.SentimentDissatisfied}
-          color={theme.palette.warning.main}
-          total={accumulatedValues.result.icu.total}
-          diff={accumulatedValues.result.icu.diffWithYesterday}
-        />
-        <AccumulatedValue
-          label="Deaths"
-          icon={materialIcons.SentimentVeryDissatisfied}
-          color={theme.palette.error.main}
-          total={accumulatedValues.result.deaths.total}
-          diff={accumulatedValues.result.deaths.diffWithYesterday}
-        />
-        <AccumulatedValue
-          label="Recovered"
-          icon={materialIcons.SentimentVerySatisfied}
-          color={theme.palette.success.main}
-          total={accumulatedValues.result.recovered.total}
-          diff={accumulatedValues.result.recovered.diffWithYesterday}
-        />
-      </div>
-    );
+  if (accumulatedValues.step !== "successful") {
+    return <></>;
   }
 
-  return <></>;
+  return (
+    <div className={classes.root}>
+      <AccumulatedValue
+        label="Cases"
+        icon={materialIcons.People}
+        color={theme.palette.primary.main}
+        total={accumulatedValues.result.cases.total}
+        diff={accumulatedValues.result.cases.diffWithYesterday}
+      />
+      <AccumulatedValue
+        label="Hospitalized"
+        icon={materialIcons.LocalHospital}
+        color={theme.palette.info.main}
+        total={accumulatedValues.result.hospitalized.total}
+        diff={accumulatedValues.result.hospitalized.diffWithYesterday}
+      />
+      <AccumulatedValue
+        label="ICU"
+        icon={materialIcons.SentimentDissatisfied}
+        color={theme.palette.warning.main}
+        total={accumulatedValues.result.icu.total}
+        diff={accumulatedValues.result.icu.diffWithYesterday}
+      />
+      <AccumulatedValue
+        label="Deaths"
+        icon={materialIcons.SentimentVeryDissatisfied}
+        color={theme.palette.error.main}
+        total={accumulatedValues.result.deaths.total}
+        diff={accumulatedValues.result.deaths.diffWithYesterday}
+      />
+      <AccumulatedValue
+        label="Recovered"
+        icon={materialIcons.SentimentVerySatisfied}
+        color={theme.palette.success.main}
+        total={accumulatedValues.result.recovered.total}
+        diff={accumulatedValues.result.recovered.diffWithYesterday}
+      />
+    </div>
+  );
 };
 
 export default AccumulatedValuesGrid;

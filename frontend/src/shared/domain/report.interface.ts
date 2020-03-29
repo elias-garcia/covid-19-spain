@@ -8,7 +8,7 @@ export interface ReportData {
 }
 
 interface Report {
-  readonly timestamp: Date;
+  readonly timestamp: string;
   readonly data: ReportData[];
 }
 

@@ -3,6 +3,8 @@ import { CircularProgress, Typography } from "@material-ui/core";
 
 import useStyles from "./styles";
 import AccumulatedValuesGridContainer from "../../containers/AccumulatedValuesGridContainer";
+import DashboardTitle from "../DashboardTitle/DashboardTitle";
+import ChoroplethContainer from "../../containers/ChoroplethContainer";
 
 export interface DashboardStateProps {
   readonly isInitialDataLoading: boolean;
@@ -37,10 +39,10 @@ const Dashboard: React.FC<DashboardProps> = ({
 
   return (
     <div className={classes.pageLoadedWrapper}>
-      <Typography variant="h5" className={classes.title}>
-        Accumulated values
-      </Typography>
+      <DashboardTitle text="Accumulated values" marginTop={0} />
       <AccumulatedValuesGridContainer />
+      <DashboardTitle text="Values by autonomous community" />
+      <ChoroplethContainer />
     </div>
   );
 };
