@@ -11,6 +11,8 @@ services:
   frontend:
     build:
       target: development
+    env_file:
+      - ./frontend/.env.development
     # Workaround for https://github.com/facebook/create-react-app/issues/8688
     stdin_open: true
     volumes:

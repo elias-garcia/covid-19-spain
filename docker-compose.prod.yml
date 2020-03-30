@@ -12,5 +12,7 @@ services:
   frontend:
     build:
       target: production
+    env_file:
+      - ./frontend/.env.production
     ports:
       - "80:80"

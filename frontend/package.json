@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start:dev": "react-scripts start",
-    "start:prod": "serve -s -p 80 build",
+    "start:prod": "serve -s -p $PORT build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
