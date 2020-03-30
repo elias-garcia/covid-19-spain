@@ -50,10 +50,7 @@ steps to deploy it using `docker-compose`.
 
 1. Rename the `.env.template` file to `.env`.
 
-2. Set the `PORT` environment variable value to `80` inside the renamed `.env`
-   file.
-
-3. Run:
+2. Run:
 
    ```shell
    docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build

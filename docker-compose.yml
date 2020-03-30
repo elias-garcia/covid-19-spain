@@ -6,6 +6,12 @@ services:
       context: ./server
     env_file:
       - ./server/.env
+    ports:
+      - "3000:3000"
 
   database:
     image: mongo:bionic
+
+  frontend:
+    build:
+      context: ./frontend

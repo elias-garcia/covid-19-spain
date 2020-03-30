@@ -17,16 +17,30 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku container:login
 
-      - name: Build and push
+      - name: Build and push server
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_SERVER_APP_NAME: ${{ secrets.HEROKU_SERVER_APP_NAME }}
         working-directory: ./server
         run: heroku container:push --app $HEROKU_SERVER_APP_NAME web
 
-      - name: Release
+      - name: Build and push frontend
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_FRONTEND_APP_NAME: ${{ secrets.HEROKU_FRONTEND_APP_NAME }}
+        working-directory: ./frontend
+        run: heroku container:push --app $HEROKU_FRONTEND_APP_NAME web
+
+      - name: Release server
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_SERVER_APP_NAME: ${{ secrets.HEROKU_SERVER_APP_NAME }}
         working-directory: ./server
         run: heroku container:release --app $HEROKU_SERVER_APP_NAME web
+
+      - name: Release frontend
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_FRONTEND_APP_NAME: ${{ secrets.HEROKU_FRONTEND_APP_NAME }}
+        working-directory: ./frontend
+        run: heroku container:release --app $HEROKU_FRONTEND_APP_NAME web

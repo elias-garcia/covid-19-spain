@@ -7,5 +7,13 @@ services:
     volumes:
       - ./server:/usr/src/covid-19-spain-server
       - /usr/src/covid-19-spain-server/node_modules
+
+  frontend:
+    build:
+      target: development
+    # Workaround for https://github.com/facebook/create-react-app/issues/8688
+    stdin_open: true
+    volumes:
+      - ./frontend:/usr/src/covid-19-spain-frontend
     ports:
-      - "3000:3000"
+      - "4200:4200"

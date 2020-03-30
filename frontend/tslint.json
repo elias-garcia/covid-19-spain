@@ -1,0 +1,11 @@
+{
+  "extends": "tslint:latest",
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "rules": {
+    "no-any": true,
+    "no-unused-expression": true,
+    "typedef": true,
+    "prettier": true,
+    "no-submodule-imports": false
+  }
+}
