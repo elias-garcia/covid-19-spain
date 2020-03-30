@@ -7,7 +7,7 @@
 **/npm-debug.log*
 
 # mongodb
-data
+./data
 
 # dependencies
 **/node_modules
