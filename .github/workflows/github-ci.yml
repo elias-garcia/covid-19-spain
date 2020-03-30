@@ -1,4 +1,4 @@
-name: CI
+name: GitHub CI
 
 on:
   push:
@@ -15,3 +15,7 @@ jobs:
       - name: Build server image
         working-directory: ./server
         run: docker build .
+
+      - name: Build frontend image
+      working-directory: ./frontend
+      run: docker build .
