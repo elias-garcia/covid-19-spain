@@ -23,35 +23,35 @@ const AccumulatedValuesWidget: React.FC<AccumulatedValuesWidgetProps> = ({
   return (
     <div className={classes.root}>
       <AccumulatedValue
-        label="Cases"
+        label="Total cases"
         icon={materialIcons.People}
         color={theme.palette.primary.main}
         total={accumulatedValues.cases.total}
         diff={accumulatedValues.cases.diffWithYesterday}
       />
       <AccumulatedValue
-        label="Hospitalized"
+        label="Total hospitalized"
         icon={materialIcons.LocalHospital}
         color={theme.palette.info.main}
         total={accumulatedValues.hospitalized.total}
         diff={accumulatedValues.hospitalized.diffWithYesterday}
       />
       <AccumulatedValue
-        label="ICU"
+        label="Total in ICU"
         icon={materialIcons.SentimentDissatisfied}
         color={theme.palette.warning.main}
         total={accumulatedValues.icu.total}
         diff={accumulatedValues.icu.diffWithYesterday}
       />
       <AccumulatedValue
-        label="Deaths"
+        label="Total deaths"
         icon={materialIcons.SentimentVeryDissatisfied}
         color={theme.palette.error.main}
         total={accumulatedValues.deaths.total}
         diff={accumulatedValues.deaths.diffWithYesterday}
       />
       <AccumulatedValue
-        label="Recovered"
+        label="Total recovered"
         icon={materialIcons.SentimentVerySatisfied}
         color={theme.palette.success.main}
         total={accumulatedValues.recovered.total}

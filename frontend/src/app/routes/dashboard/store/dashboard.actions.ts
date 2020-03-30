@@ -1,4 +1,4 @@
-import Report from "../../../../domain/report.interface";
+import Report, { Field } from "../../../../domain/report.interface";
 import AccumulatedValues from "../../../../domain/accumulated-values.interface";
 
 export const LOAD_DATA = "[DASHBOARD] LOAD DATA";
@@ -10,6 +10,7 @@ export const LOAD_ACCUMULATED_VALUES_SUCCESS =
   "[DASHBOARD] LOAD ACCUMULATED VALUES SUCCESS";
 export const LOAD_ACCUMULATED_VALUES_ERROR =
   "[DASHBOARD] LOAD ACCUMULATED VALUES ERROR";
+export const CHANGE_CHOROPLETH_FILTER = "[DASHBOARD] CHANGE CHOROPLETH FILTER";
 
 export interface LoadData {
   readonly type: typeof LOAD_DATA;
@@ -43,6 +44,11 @@ export interface LoadAccumulatedValuesError {
   readonly message: string | string[];
 }
 
+export interface ChangeChoroplethFilter {
+  readonly type: typeof CHANGE_CHOROPLETH_FILTER;
+  readonly newValue: Field;
+}
+
 export type DashboardAction =
   | LoadData
   | LoadReportsAction
@@ -50,7 +56,8 @@ export type DashboardAction =
   | LoadReportsError
   | LoadAccumulatedValuesAction
   | LoadAccumulatedValuesSuccess
-  | LoadAccumulatedValuesError;
+  | LoadAccumulatedValuesError
+  | ChangeChoroplethFilter;
 
 export const loadData = (): DashboardAction => ({ type: LOAD_DATA });
 export const loadReports = (): DashboardAction => ({ type: LOAD_REPORTS });
@@ -78,4 +85,8 @@ export const loadAccumulatedValuesError = (
 ): DashboardAction => ({
   type: LOAD_ACCUMULATED_VALUES_ERROR,
   message,
+});
+export const changeChoroplethFilter = (newValue: Field): DashboardAction => ({
+  type: CHANGE_CHOROPLETH_FILTER,
+  newValue,
 });

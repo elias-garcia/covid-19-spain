@@ -1,12 +1,12 @@
 import React from "react";
-import { Card, CardContent, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { SvgIconComponent } from "@material-ui/icons";
 
 import useStyles from "./styles";
 import AccumulatedValueDiff from "../AccumulatedValueDiff/AccumulatedValueDiff";
+import WidgetCard from "../WidgetCard/WidgetCard";
 
 export interface AccumulatedValueProps {
-  readonly className?: string;
   readonly label: string;
   readonly icon: SvgIconComponent;
   readonly color: string;
@@ -24,18 +24,16 @@ const AccumulatedValue: React.FC<AccumulatedValueProps> = ({
   const classes = useStyles({ color });
 
   return (
-    <Card>
-      <CardContent className={classes.cardContent}>
-        <div className={classes.iconWrapper}>
-          <Icon className={classes.icon} />
-        </div>
-        <Typography className={classes.total} variant="h4">
-          {total.toLocaleString()}
-        </Typography>
-        <Typography>{label}</Typography>
-        <AccumulatedValueDiff value={diff} />
-      </CardContent>
-    </Card>
+    <WidgetCard className={classes.cardContent}>
+      <div className={classes.iconWrapper}>
+        <Icon className={classes.icon} />
+      </div>
+      <Typography className={classes.total} variant="h4">
+        {total.toLocaleString()}
+      </Typography>
+      <Typography>{label}</Typography>
+      <AccumulatedValueDiff value={diff} />
+    </WidgetCard>
   );
 };
 

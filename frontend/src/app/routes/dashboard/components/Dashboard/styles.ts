@@ -22,8 +22,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   loadingText: {
     marginTop: theme.spacing(2),
   },
-  title: {
-    marginBottom: 24,
+  widget: {
+    paddingBottom: theme.spacing(6),
+    "&:last-of-type": {
+      paddingBottom: 0,
+    },
   },
 }));
 

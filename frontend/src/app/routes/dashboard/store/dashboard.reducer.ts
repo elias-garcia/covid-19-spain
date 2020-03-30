@@ -8,14 +8,16 @@ import {
   LOAD_ACCUMULATED_VALUES,
   LOAD_ACCUMULATED_VALUES_ERROR,
   LOAD_ACCUMULATED_VALUES_SUCCESS,
+  CHANGE_CHOROPLETH_FILTER,
 } from "./dashboard.actions";
-import Report from "../../../../domain/report.interface";
+import Report, { Field } from "../../../../domain/report.interface";
 import AccumulatedValues from "../../../../domain/accumulated-values.interface";
 import { AsyncTask } from "../../../../utils/async-task";
 
 export interface DashboardState {
   readonly reports: AsyncTask<Report[]>;
   readonly accumulatedValues: AsyncTask<AccumulatedValues>;
+  readonly choroplethFilter: Field;
 }
 
 const initialDashboardState: DashboardState = {
@@ -25,6 +27,7 @@ const initialDashboardState: DashboardState = {
   accumulatedValues: {
     step: "pending",
   },
+  choroplethFilter: "cases",
 };
 
 const dashboardReducer: Reducer = (
@@ -82,6 +85,12 @@ const dashboardReducer: Reducer = (
           step: "failed",
           message: action.message,
         },
+      };
+    }
+    case CHANGE_CHOROPLETH_FILTER: {
+      return {
+        ...state,
+        choroplethFilter: action.newValue,
       };
     }
     default: {
