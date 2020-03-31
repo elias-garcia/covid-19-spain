@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({
   const classes = useStyles();
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6">{appTitle}</Typography>
         <IconButton
