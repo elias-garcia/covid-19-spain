@@ -1,14 +1,25 @@
 import React from "react";
 import { Tabs, Tab } from "@material-ui/core";
+import { Link } from "react-router-dom";
+
 import useStyles from "./styles";
 
-const NavigationMenu: React.FC = () => {
+export interface NavigationMenuProps {
+  readonly pathname: string;
+}
+
+const NavigationMenu: React.FC<NavigationMenuProps> = ({ pathname }) => {
   const classes = useStyles();
 
   return (
-    <Tabs value={0} className={classes.root} centered>
-      <Tab label="Today" />
-      <Tab label="Historical" />
+    <Tabs value={pathname} className={classes.root} centered>
+      <Tab label="Today" value="/" component={Link} to="/" />
+      <Tab
+        label="Historical"
+        value="/historical"
+        component={Link}
+        to="/historical"
+      />
     </Tabs>
   );
 };

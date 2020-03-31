@@ -6,6 +6,7 @@ import { Switch, Route, Redirect } from "react-router";
 import createMaterialTheme from "../../styles/create-material-theme";
 import DashboardContainer from "../routes/dashboard/containers/DashboardContainer";
 import Layout from "./Layout/Layout";
+import Historical from "../routes/historical/components/Historical/Historical";
 
 export interface AppProps {
   readonly themeType: "light" | "dark";
@@ -19,7 +20,8 @@ const App: React.FC<AppProps> = ({ themeType }: AppProps) => {
       <CssBaseline />
       <Layout>
         <Switch>
-          <Route path="/" render={() => <DashboardContainer />} />
+          <Route exact path="/" render={() => <DashboardContainer />} />
+          <Route path="/historical" render={() => <Historical />} />
           <Redirect to="/" />
         </Switch>
       </Layout>
