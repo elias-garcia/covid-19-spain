@@ -5,9 +5,9 @@ import { connectRouter, routerMiddleware } from "connected-react-router";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 
 import State from "./state";
-import appReducer from "../app/store/app.reducer";
-import dashboardReducer from "../app/routes/dashboard/store/dashboard.reducer";
-import * as dashboardEpics from "../app/routes/dashboard/store/dashboard.epics";
+import appReducer from "../components/app/app.reducer";
+import dashboardReducer from "../components/routes/dashboard/dashboard.reducer";
+import * as dashboardEpics from "../components/routes/dashboard/dashboard.epics";
 
 const createRootReducer = (history: History) =>
   combineReducers<State>({

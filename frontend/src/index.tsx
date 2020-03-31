@@ -5,8 +5,8 @@ import { createBrowserHistory } from "history";
 import { ConnectedRouter } from "connected-react-router";
 
 import * as serviceWorker from "./serviceWorker";
-import AppContainer from "./app/containers/AppContainer";
 import configureStore from "./store/configure-store";
+import AppContainer from "./components/app/app.container";
 
 const history = createBrowserHistory();
 const store = configureStore(history);

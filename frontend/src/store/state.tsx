@@ -1,7 +1,7 @@
 import { RouterState } from "connected-react-router";
 
-import { AppState } from "../app/store/app.reducer";
-import { DashboardState } from "../app/routes/dashboard/store/dashboard.reducer";
+import { AppState } from "../components/app/app.reducer";
+import { DashboardState } from "../components/routes/dashboard/dashboard.reducer";
 
 interface State {
   readonly app: AppState;
