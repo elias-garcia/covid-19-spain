@@ -5,12 +5,13 @@ export const LOAD_DATA = "[DASHBOARD] LOAD DATA";
 export const LOAD_LATEST_REPORT = "[DASHBOARD] LOAD LATEST REPORTS";
 export const LOAD_LATEST_REPORT_SUCCESS =
   "[DASHBOARD] LOAD LATEST REPORT SUCCESS";
-export const LOAD_LATEST_REPORT_ERROR = "[DASHBOARD] LOAD LATEST REPORT ERROR";
+export const LOAD_LATEST_REPORT_FAILURE =
+  "[DASHBOARD] LOAD LATEST REPORT FAILURE";
 export const LOAD_ACCUMULATED_VALUES = "[DASHBOARD] LOAD ACCUMULATED VALUES";
 export const LOAD_ACCUMULATED_VALUES_SUCCESS =
   "[DASHBOARD] LOAD ACCUMULATED VALUES SUCCESS";
-export const LOAD_ACCUMULATED_VALUES_ERROR =
-  "[DASHBOARD] LOAD ACCUMULATED VALUES ERROR";
+export const LOAD_ACCUMULATED_VALUES_FAILURE =
+  "[DASHBOARD] LOAD ACCUMULATED VALUES FAILURE";
 export const CHANGE_CHOROPLETH_FILTER = "[DASHBOARD] CHANGE CHOROPLETH FILTER";
 
 export interface LoadData {
@@ -26,8 +27,8 @@ export interface LoadLatestReportSuccess {
   readonly report: Report;
 }
 
-export interface LoadLatestReportError {
-  readonly type: typeof LOAD_LATEST_REPORT_ERROR;
+export interface LoadLatestReportFailure {
+  readonly type: typeof LOAD_LATEST_REPORT_FAILURE;
   readonly message: string | string[];
 }
 
@@ -40,8 +41,8 @@ export interface LoadAccumulatedValuesSuccess {
   readonly accumulatedValues: AccumulatedValues;
 }
 
-export interface LoadAccumulatedValuesError {
-  readonly type: typeof LOAD_ACCUMULATED_VALUES_ERROR;
+export interface LoadAccumulatedValuesFailure {
+  readonly type: typeof LOAD_ACCUMULATED_VALUES_FAILURE;
   readonly message: string | string[];
 }
 
@@ -54,10 +55,10 @@ export type DashboardAction =
   | LoadData
   | LoadLatestReportAction
   | LoadLatestReportSuccess
-  | LoadLatestReportError
+  | LoadLatestReportFailure
   | LoadAccumulatedValuesAction
   | LoadAccumulatedValuesSuccess
-  | LoadAccumulatedValuesError
+  | LoadAccumulatedValuesFailure
   | ChangeChoroplethFilter;
 
 export const loadData = (): DashboardAction => ({ type: LOAD_DATA });
@@ -68,10 +69,10 @@ export const loadLatestReportSucces = (report: Report): DashboardAction => ({
   type: LOAD_LATEST_REPORT_SUCCESS,
   report,
 });
-export const loadLatestReportError = (
+export const loadLatestReportFailure = (
   message: string | string[]
 ): DashboardAction => ({
-  type: LOAD_LATEST_REPORT_ERROR,
+  type: LOAD_LATEST_REPORT_FAILURE,
   message,
 });
 export const loadAccumulatedValues = (): DashboardAction => ({
@@ -83,10 +84,10 @@ export const loadAccumulatedValuesSuccess = (
   type: LOAD_ACCUMULATED_VALUES_SUCCESS,
   accumulatedValues,
 });
-export const loadAccumulatedValuesError = (
+export const loadAccumulatedValuesFailure = (
   message: string | string[]
 ): DashboardAction => ({
-  type: LOAD_ACCUMULATED_VALUES_ERROR,
+  type: LOAD_ACCUMULATED_VALUES_FAILURE,
   message,
 });
 export const changeChoroplethFilter = (newValue: Field): DashboardAction => ({

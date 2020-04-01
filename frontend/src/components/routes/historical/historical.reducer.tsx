@@ -5,11 +5,11 @@ import Report from "../../../domain/report.interface";
 import {
   HistoricalAction,
   LOAD_REPORTS_SUCCESS,
-  LOAD_REPORTS_ERROR,
+  LOAD_REPORTS_FAILURE,
   LOAD_REPORTS,
   LOAD_AUTONOMOUS_COMMUNITIES,
   LOAD_AUTONOMOUS_COMMUNITIES_SUCCESS,
-  LOAD_AUTONOMOUS_COMMUNITIES_ERROR,
+  LOAD_AUTONOMOUS_COMMUNITIES_FAILURE,
 } from "./historical.actions";
 
 export interface HistoricalState {
@@ -49,7 +49,7 @@ const historicalReducer: Reducer<HistoricalState, HistoricalAction> = (
         },
       };
     }
-    case LOAD_REPORTS_ERROR: {
+    case LOAD_REPORTS_FAILURE: {
       return {
         ...state,
         reports: {
@@ -75,7 +75,7 @@ const historicalReducer: Reducer<HistoricalState, HistoricalAction> = (
         },
       };
     }
-    case LOAD_AUTONOMOUS_COMMUNITIES_ERROR: {
+    case LOAD_AUTONOMOUS_COMMUNITIES_FAILURE: {
       return {
         ...state,
         autonomousCommunities: {

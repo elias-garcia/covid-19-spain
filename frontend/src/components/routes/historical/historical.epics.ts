@@ -8,10 +8,10 @@ import {
   HistoricalAction,
   LOAD_REPORTS,
   loadReportsSuccess,
-  loadReportsError,
+  loadReportsFailure,
   LOAD_AUTONOMOUS_COMMUNITIES,
   loadAutonomousCommunitiesSuccess,
-  loadAutonomousCommunitiesError,
+  loadAutonomousCommunitiesFailure,
   loadAutonomousCommunities,
   LOAD_DATA,
   loadReports,
@@ -38,7 +38,7 @@ export const loadReportsEpic = (
       return reportsApi.fetchReports().pipe(
         map((reports: Report[]) => loadReportsSuccess(reports)),
         catchError((error: string | string[]) => {
-          return of(loadReportsError(error));
+          return of(loadReportsFailure(error));
         })
       );
     })
@@ -57,7 +57,7 @@ export const loadAutonomousCommunitiesEpic = (
             return loadAutonomousCommunitiesSuccess(autonomousCommunities);
           },
           catchError((error: string) => {
-            return of(loadAutonomousCommunitiesError(error));
+            return of(loadAutonomousCommunitiesFailure(error));
           })
         )
       );

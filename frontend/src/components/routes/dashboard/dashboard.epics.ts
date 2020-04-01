@@ -6,13 +6,13 @@ import {
   DashboardAction,
   LOAD_LATEST_REPORT,
   loadLatestReportSucces,
-  loadLatestReportError,
+  loadLatestReportFailure,
   LOAD_DATA,
   loadLatestReport,
   loadAccumulatedValues,
   LOAD_ACCUMULATED_VALUES,
   loadAccumulatedValuesSuccess,
-  loadAccumulatedValuesError,
+  loadAccumulatedValuesFailure,
 } from "./dashboard.actions";
 import * as reportsApi from "../../../api/reports.api";
 import * as accumulatedValuesApi from "../../../api/accumulated-values.api";
@@ -39,7 +39,7 @@ export const loadLatestReportEpic = (
       return reportsApi.fetchLatestReport().pipe(
         map((report: Report) => loadLatestReportSucces(report)),
         catchError((error: string | string[]) => {
-          return of(loadLatestReportError(error));
+          return of(loadLatestReportFailure(error));
         })
       );
     })
@@ -57,7 +57,7 @@ export const loadAccumulatedValuesEpic = (
           loadAccumulatedValuesSuccess(accumulatedValues)
         ),
         catchError((error: string | string[]) =>
-          of(loadAccumulatedValuesError(error))
+          of(loadAccumulatedValuesFailure(error))
         )
       );
     })

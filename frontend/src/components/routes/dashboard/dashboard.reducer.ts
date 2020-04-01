@@ -4,9 +4,9 @@ import {
   DashboardAction,
   LOAD_LATEST_REPORT_SUCCESS,
   LOAD_LATEST_REPORT,
-  LOAD_LATEST_REPORT_ERROR,
+  LOAD_LATEST_REPORT_FAILURE,
   LOAD_ACCUMULATED_VALUES,
-  LOAD_ACCUMULATED_VALUES_ERROR,
+  LOAD_ACCUMULATED_VALUES_FAILURE,
   LOAD_ACCUMULATED_VALUES_SUCCESS,
   CHANGE_CHOROPLETH_FILTER,
 } from "./dashboard.actions";
@@ -52,7 +52,7 @@ const dashboardReducer: Reducer<DashboardState, DashboardAction> = (
         },
       };
     }
-    case LOAD_LATEST_REPORT_ERROR: {
+    case LOAD_LATEST_REPORT_FAILURE: {
       return {
         ...state,
         latestReport: {
@@ -78,7 +78,7 @@ const dashboardReducer: Reducer<DashboardState, DashboardAction> = (
         },
       };
     }
-    case LOAD_ACCUMULATED_VALUES_ERROR: {
+    case LOAD_ACCUMULATED_VALUES_FAILURE: {
       return {
         ...state,
         accumulatedValues: {
