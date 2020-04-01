@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { CircularProgress, Typography } from "@material-ui/core";
 
 import useStyles from "./dashboard.styles";
 import {
   AccumulatedValuesWidgetContainer,
   ChoroplethWidgetContainer,
 } from "./components";
+import LoadingSpinner from "../../shared/loading-spinner/loading-spinner";
 
 export interface DashboardStateProps {
   readonly isInitialDataLoading: boolean;
@@ -28,23 +28,14 @@ const Dashboard: React.FC<DashboardProps> = ({
   }, [onLoadData]);
 
   if (isInitialDataLoading) {
-    return (
-      <div className={classes.pageLoadingWrapper}>
-        <div className={classes.loadingWrapper}>
-          <CircularProgress />
-          <Typography className={classes.loadingText}>Loading data</Typography>
-        </div>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   return (
     <div className={classes.pageLoadedWrapper}>
-      {/* <DashboardTitle text="Accumulated values" marginTop={0} /> */}
       <div className={classes.widget}>
         <AccumulatedValuesWidgetContainer />
       </div>
-      {/* <DashboardTitle text="Values by autonomous community" /> */}
       <div className={classes.widget}>
         <ChoroplethWidgetContainer />
       </div>
