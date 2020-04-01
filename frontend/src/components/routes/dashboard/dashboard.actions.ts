@@ -2,9 +2,10 @@ import Report, { Field } from "../../../domain/report.interface";
 import AccumulatedValues from "../../../domain/accumulated-values.interface";
 
 export const LOAD_DATA = "[DASHBOARD] LOAD DATA";
-export const LOAD_REPORTS = "[DASHBOARD] LOAD REPORTS";
-export const LOAD_REPORTS_SUCCESS = "[DASHBOARD] LOAD REPORTS SUCCESS";
-export const LOAD_REPORTS_ERROR = "[DASHBOARD] LOAD REPORTS ERROR";
+export const LOAD_LATEST_REPORT = "[DASHBOARD] LOAD LATEST REPORTS";
+export const LOAD_LATEST_REPORT_SUCCESS =
+  "[DASHBOARD] LOAD LATEST REPORT SUCCESS";
+export const LOAD_LATEST_REPORT_ERROR = "[DASHBOARD] LOAD LATEST REPORT ERROR";
 export const LOAD_ACCUMULATED_VALUES = "[DASHBOARD] LOAD ACCUMULATED VALUES";
 export const LOAD_ACCUMULATED_VALUES_SUCCESS =
   "[DASHBOARD] LOAD ACCUMULATED VALUES SUCCESS";
@@ -16,17 +17,17 @@ export interface LoadData {
   readonly type: typeof LOAD_DATA;
 }
 
-export interface LoadReportsAction {
-  readonly type: typeof LOAD_REPORTS;
+export interface LoadLatestReportAction {
+  readonly type: typeof LOAD_LATEST_REPORT;
 }
 
-export interface LoadReportsSuccess {
-  readonly type: typeof LOAD_REPORTS_SUCCESS;
-  readonly reports: Report[];
+export interface LoadLatestReportSuccess {
+  readonly type: typeof LOAD_LATEST_REPORT_SUCCESS;
+  readonly report: Report;
 }
 
-export interface LoadReportsError {
-  readonly type: typeof LOAD_REPORTS_ERROR;
+export interface LoadLatestReportError {
+  readonly type: typeof LOAD_LATEST_REPORT_ERROR;
   readonly message: string | string[];
 }
 
@@ -51,24 +52,26 @@ export interface ChangeChoroplethFilter {
 
 export type DashboardAction =
   | LoadData
-  | LoadReportsAction
-  | LoadReportsSuccess
-  | LoadReportsError
+  | LoadLatestReportAction
+  | LoadLatestReportSuccess
+  | LoadLatestReportError
   | LoadAccumulatedValuesAction
   | LoadAccumulatedValuesSuccess
   | LoadAccumulatedValuesError
   | ChangeChoroplethFilter;
 
 export const loadData = (): DashboardAction => ({ type: LOAD_DATA });
-export const loadReports = (): DashboardAction => ({ type: LOAD_REPORTS });
-export const loadReportsSuccess = (reports: Report[]): DashboardAction => ({
-  type: LOAD_REPORTS_SUCCESS,
-  reports,
+export const loadLatestReport = (): DashboardAction => ({
+  type: LOAD_LATEST_REPORT,
 });
-export const loadReportsError = (
+export const loadLatestReportSucces = (report: Report): DashboardAction => ({
+  type: LOAD_LATEST_REPORT_SUCCESS,
+  report,
+});
+export const loadLatestReportError = (
   message: string | string[]
 ): DashboardAction => ({
-  type: LOAD_REPORTS_ERROR,
+  type: LOAD_LATEST_REPORT_ERROR,
   message,
 });
 export const loadAccumulatedValues = (): DashboardAction => ({

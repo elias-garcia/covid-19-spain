@@ -21,7 +21,7 @@ const createRootReducer = (history: History) =>
 
 const rootEpic = combineEpics(
   dashboardEpics.loadDataEpic,
-  dashboardEpics.loadReportsEpic,
+  dashboardEpics.loadLatestReportEpic,
   dashboardEpics.loadAccumulatedValuesEpic,
   historicalEpics.loadReportsEpic
 );

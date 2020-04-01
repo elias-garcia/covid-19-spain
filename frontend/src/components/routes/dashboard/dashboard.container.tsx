@@ -10,7 +10,7 @@ import State from "../../../store/state";
 
 const mapStateToProps = (state: State): DashboardStateProps => ({
   isInitialDataLoading:
-    state.dashboard.reports.step === "loading" ||
+    state.dashboard.latestReport.step === "loading" ||
     state.dashboard.accumulatedValues.step === "loading",
 });
 

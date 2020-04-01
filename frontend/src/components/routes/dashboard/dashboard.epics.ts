@@ -4,11 +4,11 @@ import { of, Observable } from "rxjs";
 
 import {
   DashboardAction,
-  LOAD_REPORTS,
-  loadReportsSuccess,
-  loadReportsError,
+  LOAD_LATEST_REPORT,
+  loadLatestReportSucces,
+  loadLatestReportError,
   LOAD_DATA,
-  loadReports,
+  loadLatestReport,
   loadAccumulatedValues,
   LOAD_ACCUMULATED_VALUES,
   loadAccumulatedValuesSuccess,
@@ -25,21 +25,21 @@ export const loadDataEpic = (
   return action$.pipe(
     ofType(LOAD_DATA),
     mergeMap(() => {
-      return of(loadReports(), loadAccumulatedValues());
+      return of(loadLatestReport(), loadAccumulatedValues());
     })
   );
 };
 
-export const loadReportsEpic = (
+export const loadLatestReportEpic = (
   action$: ActionsObservable<DashboardAction>
 ): Observable<DashboardAction> => {
   return action$.pipe(
-    ofType(LOAD_REPORTS),
+    ofType(LOAD_LATEST_REPORT),
     mergeMap(() => {
-      return reportsApi.fetchReports().pipe(
-        map((reports: Report[]) => loadReportsSuccess(reports)),
+      return reportsApi.fetchLatestReport().pipe(
+        map((report: Report) => loadLatestReportSucces(report)),
         catchError((error: string | string[]) => {
-          return of(loadReportsError(error));
+          return of(loadLatestReportError(error));
         })
       );
     })

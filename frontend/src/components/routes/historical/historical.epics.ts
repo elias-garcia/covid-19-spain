@@ -17,7 +17,7 @@ export const loadReportsEpic = (
   return action$.pipe(
     ofType(LOAD_REPORTS),
     mergeMap(() => {
-      return reportsApi.fetchReports().pipe(
+      return reportsApi.fetchReports({}).pipe(
         map((reports: Report[]) => loadReportsSuccess(reports)),
         catchError((error: string | string[]) => {
           return of(loadReportsError(error));

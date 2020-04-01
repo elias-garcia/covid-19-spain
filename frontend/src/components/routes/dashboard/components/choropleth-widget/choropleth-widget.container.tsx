@@ -15,18 +15,14 @@ import {
 import { ReportData, Field } from "../../../../../domain/report.interface";
 
 const mapStateToData = ({
-  dashboard: { reports, choroplethFilter },
+  dashboard: { latestReport, choroplethFilter },
 }: State): ChoroplethData | undefined => {
-  if (reports.step !== "successful") {
+  if (latestReport.step !== "successful") {
     return undefined;
   }
 
-  return reports.result
-    .sort(
-      (a, b) =>
-        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-    )[0]
-    .data.map((reportData: ReportData) => {
+  return latestReport.result.data
+    .map((reportData: ReportData) => {
       return {
         id: reportData.autonomousCommunity,
         value: reportData.values[choroplethFilter],

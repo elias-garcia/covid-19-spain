@@ -2,9 +2,9 @@ import { Reducer } from "redux";
 
 import {
   DashboardAction,
-  LOAD_REPORTS_SUCCESS,
-  LOAD_REPORTS,
-  LOAD_REPORTS_ERROR,
+  LOAD_LATEST_REPORT_SUCCESS,
+  LOAD_LATEST_REPORT,
+  LOAD_LATEST_REPORT_ERROR,
   LOAD_ACCUMULATED_VALUES,
   LOAD_ACCUMULATED_VALUES_ERROR,
   LOAD_ACCUMULATED_VALUES_SUCCESS,
@@ -15,13 +15,13 @@ import AccumulatedValues from "../../../domain/accumulated-values.interface";
 import { AsyncTask } from "../../../utils/async-task";
 
 export interface DashboardState {
-  readonly reports: AsyncTask<Report[]>;
+  readonly latestReport: AsyncTask<Report>;
   readonly accumulatedValues: AsyncTask<AccumulatedValues>;
   readonly choroplethFilter: Field;
 }
 
 const initialDashboardState: DashboardState = {
-  reports: {
+  latestReport: {
     step: "pending",
   },
   accumulatedValues: {
@@ -35,27 +35,27 @@ const dashboardReducer: Reducer<DashboardState, DashboardAction> = (
   action: DashboardAction
 ): DashboardState => {
   switch (action.type) {
-    case LOAD_REPORTS: {
+    case LOAD_LATEST_REPORT: {
       return {
         ...state,
-        reports: {
+        latestReport: {
           step: "loading",
         },
       };
     }
-    case LOAD_REPORTS_SUCCESS: {
+    case LOAD_LATEST_REPORT_SUCCESS: {
       return {
         ...state,
-        reports: {
+        latestReport: {
           step: "successful",
-          result: action.reports,
+          result: action.report,
         },
       };
     }
-    case LOAD_REPORTS_ERROR: {
+    case LOAD_LATEST_REPORT_ERROR: {
       return {
         ...state,
-        reports: {
+        latestReport: {
           step: "failed",
           message: action.message,
         },
