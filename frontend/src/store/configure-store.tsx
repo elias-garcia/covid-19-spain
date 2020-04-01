@@ -23,7 +23,9 @@ const rootEpic = combineEpics(
   dashboardEpics.loadDataEpic,
   dashboardEpics.loadLatestReportEpic,
   dashboardEpics.loadAccumulatedValuesEpic,
-  historicalEpics.loadReportsEpic
+  historicalEpics.loadDataEpic,
+  historicalEpics.loadReportsEpic,
+  historicalEpics.loadAutonomousCommunitiesEpic
 );
 
 const configureStore = (history: History) => {

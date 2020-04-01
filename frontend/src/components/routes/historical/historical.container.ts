@@ -6,7 +6,7 @@ import Historical, {
   HistoricalHandlerProps,
 } from "./historical";
 import State from "../../../store/state";
-import { HistoricalAction, loadReports } from "./historical.actions";
+import { HistoricalAction, loadData } from "./historical.actions";
 
 const mapStateToProps = (state: State): HistoricalStateProps => ({
   areReportsLoading: state.historical.reports.step === "loading",
@@ -15,7 +15,7 @@ const mapStateToProps = (state: State): HistoricalStateProps => ({
 const mapDispatchToProps = (
   dispatch: Dispatch<HistoricalAction>
 ): HistoricalHandlerProps => ({
-  onLoadReports: () => dispatch(loadReports()),
+  onLoadData: () => dispatch(loadData()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Historical);

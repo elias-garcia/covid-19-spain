@@ -8,20 +8,20 @@ export interface HistoricalStateProps {
 }
 
 export interface HistoricalHandlerProps {
-  readonly onLoadReports: () => void;
+  readonly onLoadData: () => void;
 }
 
 type HistoricalProps = HistoricalStateProps & HistoricalHandlerProps;
 
 const Historical: React.FC<HistoricalProps> = ({
   areReportsLoading,
-  onLoadReports,
+  onLoadData,
 }) => {
   const classes = useStyles();
 
   useEffect(() => {
-    onLoadReports();
-  }, [onLoadReports]);
+    onLoadData();
+  }, [onLoadData]);
 
   if (areReportsLoading) {
     return <LoadingSpinner />;

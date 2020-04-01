@@ -46,7 +46,7 @@ export const fetchLatestReport = (): Observable<Report> => {
 };
 
 export const fetchReports = (
-  params: Partial<FetchReportsParams>
+  params?: Partial<FetchReportsParams>
 ): Observable<Report[]> => {
   if (params && Object.keys(params).length) {
     const queryString = buildFetchReportsQueryString(params);

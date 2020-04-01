@@ -7,14 +7,21 @@ import {
   LOAD_REPORTS_SUCCESS,
   LOAD_REPORTS_ERROR,
   LOAD_REPORTS,
+  LOAD_AUTONOMOUS_COMMUNITIES,
+  LOAD_AUTONOMOUS_COMMUNITIES_SUCCESS,
+  LOAD_AUTONOMOUS_COMMUNITIES_ERROR,
 } from "./historical.actions";
 
 export interface HistoricalState {
   readonly reports: AsyncTask<Report[]>;
+  readonly autonomousCommunities: AsyncTask<string[]>;
 }
 
 const initialState: HistoricalState = {
   reports: {
+    step: "pending",
+  },
+  autonomousCommunities: {
     step: "pending",
   },
 };
@@ -27,6 +34,7 @@ const historicalReducer: Reducer<HistoricalState, HistoricalAction> = (
   switch (action.type) {
     case LOAD_REPORTS: {
       return {
+        ...state,
         reports: {
           step: "loading",
         },
@@ -34,6 +42,7 @@ const historicalReducer: Reducer<HistoricalState, HistoricalAction> = (
     }
     case LOAD_REPORTS_SUCCESS: {
       return {
+        ...state,
         reports: {
           step: "successful",
           result: action.reports,
@@ -42,7 +51,34 @@ const historicalReducer: Reducer<HistoricalState, HistoricalAction> = (
     }
     case LOAD_REPORTS_ERROR: {
       return {
+        ...state,
         reports: {
+          step: "failed",
+          message: action.message,
+        },
+      };
+    }
+    case LOAD_AUTONOMOUS_COMMUNITIES: {
+      return {
+        ...state,
+        autonomousCommunities: {
+          step: "loading",
+        },
+      };
+    }
+    case LOAD_AUTONOMOUS_COMMUNITIES_SUCCESS: {
+      return {
+        ...state,
+        autonomousCommunities: {
+          step: "successful",
+          result: action.autonomousCommunities,
+        },
+      };
+    }
+    case LOAD_AUTONOMOUS_COMMUNITIES_ERROR: {
+      return {
+        ...state,
+        autonomousCommunities: {
           step: "failed",
           message: action.message,
         },
