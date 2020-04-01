@@ -5,7 +5,11 @@ import Dashboard, {
   DashboardStateProps,
   DashboardHandlerProps,
 } from "./dashboard";
-import { loadData, DashboardAction } from "./dashboard.actions";
+import {
+  loadData,
+  DashboardAction,
+  abortDataLoading,
+} from "./dashboard.actions";
 import State from "../../../store/state";
 
 const mapStateToProps = (state: State): DashboardStateProps => ({
@@ -18,6 +22,7 @@ const mapDispatchToProps = (
   dispatch: Dispatch<DashboardAction>
 ): DashboardHandlerProps => ({
   onLoadData: () => dispatch(loadData()),
+  onAbortDataLoading: () => dispatch(abortDataLoading()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

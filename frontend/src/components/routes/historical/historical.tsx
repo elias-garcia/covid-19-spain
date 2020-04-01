@@ -9,6 +9,7 @@ export interface HistoricalStateProps {
 
 export interface HistoricalHandlerProps {
   readonly onLoadData: () => void;
+  readonly onAbortDataLoading: () => void;
 }
 
 type HistoricalProps = HistoricalStateProps & HistoricalHandlerProps;
@@ -16,12 +17,15 @@ type HistoricalProps = HistoricalStateProps & HistoricalHandlerProps;
 const Historical: React.FC<HistoricalProps> = ({
   areReportsLoading,
   onLoadData,
+  onAbortDataLoading,
 }) => {
   const classes = useStyles();
 
   useEffect(() => {
     onLoadData();
-  }, [onLoadData]);
+
+    return () => onAbortDataLoading();
+  }, [onLoadData, onAbortDataLoading]);
 
   if (areReportsLoading) {
     return <LoadingSpinner />;

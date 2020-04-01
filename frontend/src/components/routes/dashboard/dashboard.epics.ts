@@ -1,5 +1,5 @@
 import { ActionsObservable, ofType } from "redux-observable";
-import { mergeMap, map, catchError } from "rxjs/operators";
+import { mergeMap, map, catchError, takeUntil } from "rxjs/operators";
 import { of, Observable } from "rxjs";
 
 import {
@@ -13,6 +13,7 @@ import {
   LOAD_ACCUMULATED_VALUES,
   loadAccumulatedValuesSuccess,
   loadAccumulatedValuesFailure,
+  ABORT_DATA_LOADING,
 } from "./dashboard.actions";
 import * as reportsApi from "../../../api/reports.api";
 import * as accumulatedValuesApi from "../../../api/accumulated-values.api";
@@ -40,7 +41,8 @@ export const loadLatestReportEpic = (
         map((report: Report) => loadLatestReportSucces(report)),
         catchError((error: string | string[]) => {
           return of(loadLatestReportFailure(error));
-        })
+        }),
+        takeUntil(action$.pipe(ofType(ABORT_DATA_LOADING)))
       );
     })
   );
@@ -58,7 +60,8 @@ export const loadAccumulatedValuesEpic = (
         ),
         catchError((error: string | string[]) =>
           of(loadAccumulatedValuesFailure(error))
-        )
+        ),
+        takeUntil(action$.pipe(ofType(ABORT_DATA_LOADING)))
       );
     })
   );

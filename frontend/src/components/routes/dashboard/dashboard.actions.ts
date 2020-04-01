@@ -2,6 +2,7 @@ import Report, { Field } from "../../../domain/report.interface";
 import AccumulatedValues from "../../../domain/accumulated-values.interface";
 
 export const LOAD_DATA = "[DASHBOARD] LOAD DATA";
+export const ABORT_DATA_LOADING = "[DASHBOARD] ABORT DATA LOADING";
 export const LOAD_LATEST_REPORT = "[DASHBOARD] LOAD LATEST REPORTS";
 export const LOAD_LATEST_REPORT_SUCCESS =
   "[DASHBOARD] LOAD LATEST REPORT SUCCESS";
@@ -16,6 +17,10 @@ export const CHANGE_CHOROPLETH_FILTER = "[DASHBOARD] CHANGE CHOROPLETH FILTER";
 
 export interface LoadData {
   readonly type: typeof LOAD_DATA;
+}
+
+export interface AbortDataLoading {
+  readonly type: typeof ABORT_DATA_LOADING;
 }
 
 export interface LoadLatestReportAction {
@@ -53,6 +58,7 @@ export interface ChangeChoroplethFilter {
 
 export type DashboardAction =
   | LoadData
+  | AbortDataLoading
   | LoadLatestReportAction
   | LoadLatestReportSuccess
   | LoadLatestReportFailure
@@ -62,6 +68,9 @@ export type DashboardAction =
   | ChangeChoroplethFilter;
 
 export const loadData = (): DashboardAction => ({ type: LOAD_DATA });
+export const abortDataLoading = (): DashboardAction => ({
+  type: ABORT_DATA_LOADING,
+});
 export const loadLatestReport = (): DashboardAction => ({
   type: LOAD_LATEST_REPORT,
 });

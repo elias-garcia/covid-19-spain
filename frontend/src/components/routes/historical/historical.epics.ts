@@ -1,5 +1,5 @@
 import { ActionsObservable, ofType } from "redux-observable";
-import { mergeMap, map, catchError } from "rxjs/operators";
+import { mergeMap, map, catchError, takeUntil } from "rxjs/operators";
 import { of, Observable } from "rxjs";
 
 import * as reportsApi from "../../../api/reports.api";
@@ -15,6 +15,7 @@ import {
   loadAutonomousCommunities,
   LOAD_DATA,
   loadReports,
+  ABORT_DATA_LOADING,
 } from "../historical/historical.actions";
 import Report from "../../../domain/report.interface";
 
@@ -39,7 +40,8 @@ export const loadReportsEpic = (
         map((reports: Report[]) => loadReportsSuccess(reports)),
         catchError((error: string | string[]) => {
           return of(loadReportsFailure(error));
-        })
+        }),
+        takeUntil(action$.pipe(ofType(ABORT_DATA_LOADING)))
       );
     })
   );
@@ -59,7 +61,8 @@ export const loadAutonomousCommunitiesEpic = (
           catchError((error: string) => {
             return of(loadAutonomousCommunitiesFailure(error));
           })
-        )
+        ),
+        takeUntil(action$.pipe(ofType(ABORT_DATA_LOADING)))
       );
     })
   );

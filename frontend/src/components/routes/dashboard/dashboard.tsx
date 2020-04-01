@@ -13,6 +13,7 @@ export interface DashboardStateProps {
 
 export interface DashboardHandlerProps {
   readonly onLoadData: () => void;
+  readonly onAbortDataLoading: () => void;
 }
 
 type DashboardProps = DashboardStateProps & DashboardHandlerProps;
@@ -20,12 +21,15 @@ type DashboardProps = DashboardStateProps & DashboardHandlerProps;
 const Dashboard: React.FC<DashboardProps> = ({
   isInitialDataLoading,
   onLoadData,
+  onAbortDataLoading,
 }: DashboardProps) => {
   const classes = useStyles();
 
   useEffect(() => {
     onLoadData();
-  }, [onLoadData]);
+
+    return () => onAbortDataLoading();
+  }, [onLoadData, onAbortDataLoading]);
 
   if (isInitialDataLoading) {
     return <LoadingSpinner />;
