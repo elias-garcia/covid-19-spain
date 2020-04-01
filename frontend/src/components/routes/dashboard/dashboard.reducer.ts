@@ -30,7 +30,7 @@ const initialDashboardState: DashboardState = {
   choroplethFilter: "cases",
 };
 
-const dashboardReducer: Reducer = (
+const dashboardReducer: Reducer<DashboardState, DashboardAction> = (
   state = initialDashboardState,
   action: DashboardAction
 ): DashboardState => {

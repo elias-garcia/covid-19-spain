@@ -8,18 +8,22 @@ import State from "./state";
 import appReducer from "../components/app/app.reducer";
 import dashboardReducer from "../components/routes/dashboard/dashboard.reducer";
 import * as dashboardEpics from "../components/routes/dashboard/dashboard.epics";
+import * as historicalEpics from "../components/routes/historical/historical.epics";
+import historicalReducer from "../components/routes/historical/historical.reducer";
 
 const createRootReducer = (history: History) =>
   combineReducers<State>({
     app: appReducer,
     dashboard: dashboardReducer,
+    historical: historicalReducer,
     router: connectRouter(history),
   });
 
 const rootEpic = combineEpics(
   dashboardEpics.loadDataEpic,
   dashboardEpics.loadReportsEpic,
-  dashboardEpics.loadAccumulatedValuesEpic
+  dashboardEpics.loadAccumulatedValuesEpic,
+  historicalEpics.loadReportsEpic
 );
 
 const configureStore = (history: History) => {
