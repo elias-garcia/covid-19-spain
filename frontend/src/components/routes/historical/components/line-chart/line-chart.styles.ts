@@ -1,9 +1,14 @@
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    height: 500,
+    height: "100%",
+    overflowX: "auto",
+    [theme.breakpoints.up("lg")]: {
+      height: 450,
+      overflow: "hidden",
+    },
   },
-});
+}));
 
 export default useStyles;
