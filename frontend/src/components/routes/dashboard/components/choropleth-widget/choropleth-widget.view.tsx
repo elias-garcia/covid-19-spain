@@ -6,8 +6,8 @@ import autonomousCommunitiesGeoData from "../../../../../data/autonomous-communi
 import useStyles from "./choropleth-widget.styles";
 import useNivoTheme from "../../../../../styles/nivo-theme";
 
-import WidgetCard from "../../../../shared/widget-card/widget-card";
-import { FilterOption } from "../../../../shared/widget-card/components/widget-card-title-with-inline-filter/widget-card-title-with-inline-filter";
+import WidgetCard from "../../../../shared/widget-card/widget-card.view";
+import { FilterOption } from "../../../../shared/widget-card/components/widget-card-title-with-inline-filter/widget-card-title-with-inline-filter.view";
 import { Field } from "../../../../../domain/report.interface";
 import useChoroplethProjectionData from "./hooks/use-choropleth-projection-data";
 import useChoroplethLegends from "./hooks/use-choropleth-legends";

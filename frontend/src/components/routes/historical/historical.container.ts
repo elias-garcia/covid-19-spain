@@ -4,7 +4,7 @@ import { Dispatch } from "redux";
 import Historical, {
   HistoricalStateProps,
   HistoricalHandlerProps,
-} from "./historical";
+} from "./historical.view";
 import State from "../../../store/state";
 import { HistoricalAction, loadData } from "./historical.actions";
 import { abortDataLoading } from "../historical/historical.actions";

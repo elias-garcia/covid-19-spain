@@ -2,11 +2,11 @@ import React from "react";
 import { Card, CardContent, Divider } from "@material-ui/core";
 
 import useStyles from "./widget-card.styles";
-import WidgetCardTitle from "./components/widget-card-title/widget-card-title";
+import WidgetCardTitle from "./components/widget-card-title/widget-card-title.view";
 import WidgetCardTitleWithInlineFilter, {
   WidgetCardTitleWithInlineFilterStateProps,
   WidgetCardTitleWithInlineFilterHandlerProps,
-} from "./components/widget-card-title-with-inline-filter/widget-card-title-with-inline-filter";
+} from "./components/widget-card-title-with-inline-filter/widget-card-title-with-inline-filter.view";
 
 interface WidgetCardWithoutTitleProps {
   readonly className?: string;

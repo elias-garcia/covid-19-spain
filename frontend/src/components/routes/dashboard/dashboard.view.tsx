@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 
 import useStyles from "./dashboard.styles";
-import {
-  AccumulatedValuesWidgetContainer,
-  ChoroplethWidgetContainer,
-} from "./components";
-import LoadingSpinner from "../../shared/loading-spinner/loading-spinner";
+import AccumulatedValuesWidgetContainer from "./components/accumulated-values-widget/accumulated-values-widget.container";
+import ChoroplethWidgetContainer from "./components/choropleth-widget/choropleth-widget.container";
+import LoadingSpinner from "../../shared/loading-spinner/loading-spinner.view";
 
 export interface DashboardStateProps {
   readonly isInitialDataLoading: boolean;

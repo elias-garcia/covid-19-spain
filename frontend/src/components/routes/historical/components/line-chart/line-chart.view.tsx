@@ -1,6 +1,6 @@
 import React from "react";
 import { ResponsiveLine, Serie, LineSvgProps, Line } from "@nivo/line";
-import WidgetCard from "../../../../shared/widget-card/widget-card";
+import WidgetCard from "../../../../shared/widget-card/widget-card.view";
 import useStyles from "./line-chart.styles";
 import useNivoTheme from "../../../../../styles/nivo-theme";
 import { useTheme, useMediaQuery } from "@material-ui/core";

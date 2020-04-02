@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
 import useStyles from "./historical.styles";
-import LoadingSpinner from "../../shared/loading-spinner/loading-spinner";
-import LineChartsWidget from "./components/line-charts-widget/line-charts-widget";
+import LoadingSpinner from "../../shared/loading-spinner/loading-spinner.view";
+import LineChartsWidget from "./components/line-charts-widget/line-charts-widget.view";
 import AutonomousCommunitiesFilterContainer from "./components/autonomous-communities-filter/autonomous-communities-filter.container";
 
 export interface HistoricalStateProps {

@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import State from "../../../../../store/state";
-import Footer, { FooterProps } from "./footer";
+import Footer, { FooterProps } from "./footer.view";
 
 const mapStateToProps = (state: State): FooterProps => ({
   appTitle: state.app.title,

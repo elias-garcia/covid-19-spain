@@ -3,7 +3,7 @@ import * as materialIcons from "@material-ui/icons";
 import { useTheme } from "@material-ui/core";
 
 import AccumulatedValues from "../../../../../domain/accumulated-values.interface";
-import AccumulatedValue from "../accumulated-value/accumulated-value";
+import AccumulatedValue from "../accumulated-value/accumulated-value.view";
 import useStyles from "./accumulated-values.styles";
 
 export interface AccumulatedValuesWidgetProps {

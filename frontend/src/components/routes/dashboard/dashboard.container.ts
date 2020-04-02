@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Dashboard, {
   DashboardStateProps,
   DashboardHandlerProps,
-} from "./dashboard";
+} from "./dashboard.view";
 import {
   loadData,
   DashboardAction,

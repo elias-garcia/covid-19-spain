@@ -2,7 +2,7 @@ import React from "react";
 import { Select, MenuItem } from "@material-ui/core";
 
 import useStyles from "./widget-card-title-with-inline-filter.styles";
-import WidgetCardTitle from "../widget-card-title/widget-card-title";
+import WidgetCardTitle from "../widget-card-title/widget-card-title.view";
 
 export interface FilterOption {
   readonly label: string;

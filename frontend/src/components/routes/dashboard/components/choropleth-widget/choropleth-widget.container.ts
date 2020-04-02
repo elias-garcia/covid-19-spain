@@ -4,7 +4,7 @@ import ChoroplethWidget, {
   ChoroplethWidgetHandlerProps,
   ChoroplethWidgetStateProps,
   ChoroplethDataItem,
-} from "./choropleth-widget";
+} from "./choropleth-widget.view";
 import State from "../../../../../store/state";
 import { Dispatch } from "react";
 import {

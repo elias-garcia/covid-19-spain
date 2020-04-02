@@ -3,8 +3,8 @@ import { Typography } from "@material-ui/core";
 import { SvgIconComponent } from "@material-ui/icons";
 
 import useStyles from "./accumulated-value.styles";
-import WidgetCard from "../../../../shared/widget-card/widget-card";
-import AccumulatedValueDiff from "../accumulated-value-diff/AccumulatedValueDiff";
+import WidgetCard from "../../../../shared/widget-card/widget-card.view";
+import AccumulatedValueDiff from "../accumulated-value-diff/accumulated-value-diff.view";
 
 export interface AccumulatedValueProps {
   readonly label: string;

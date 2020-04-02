@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import AccumulatedValuesWidget, {
   AccumulatedValuesWidgetProps,
-} from "./accumulated-values-widget";
+} from "./accumulated-values-widget.view";
 import State from "../../../../../store/state";
 import AccumulatedValues from "../../../../../domain/accumulated-values.interface";
 

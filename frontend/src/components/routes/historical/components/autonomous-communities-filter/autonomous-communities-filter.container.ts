@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import AutonomousCommunitiesFilter, {
   AutonomousCommunitiesFilterHandlerProps,
   AutonomousCommunitiesFilterStateProps,
-} from "./autonomous-communities-filter";
+} from "./autonomous-communities-filter.view";
 import State from "../../../../../store/state";
 import { Dispatch } from "react";
 import {

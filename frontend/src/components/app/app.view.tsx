@@ -4,7 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { Switch, Route, Redirect } from "react-router";
 
 import createMaterialTheme from "../../styles/create-material-theme";
-import Layout from "../core/layout/layout";
+import Layout from "../core/layout/layout.view";
 import DashboardContainer from "../routes/dashboard/dashboard.container";
 import HistoricalContainer from "../routes/historical/historical.container";
 

@@ -4,7 +4,7 @@ import LineChart, {
   LineChartProps,
   LineChartData,
   LineChartDataItem,
-} from "./line-chart";
+} from "./line-chart.view";
 import State from "../../../../../store/state";
 import { Field } from "../../../../../domain/report.interface";
 

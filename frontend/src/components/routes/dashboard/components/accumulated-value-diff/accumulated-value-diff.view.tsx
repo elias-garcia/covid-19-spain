@@ -2,7 +2,7 @@ import React from "react";
 import { TrendingUp, TrendingDown, TrendingFlat } from "@material-ui/icons";
 import { Typography } from "@material-ui/core";
 
-import useStyles from "./styles";
+import useStyles from "./accumulated-value-diff.styles";
 
 interface AccumulatedValueDiffProps {
   readonly value: number;

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import NavigationMenu, { NavigationMenuProps } from "./navigation-menu";
+import NavigationMenu, { NavigationMenuProps } from "./navigation-menu.view";
 import State from "../../../../../store/state";
 
 const mapStateToProps = (state: State): NavigationMenuProps => ({
