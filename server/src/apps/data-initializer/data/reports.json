@@ -1188,7 +1188,7 @@
           "cases": 0,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1208,7 +1208,7 @@
           "cases": 3,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1218,7 +1218,7 @@
           "cases": 0,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1228,7 +1228,7 @@
           "cases": 0,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1258,7 +1258,7 @@
           "cases": 0,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1268,7 +1268,7 @@
           "cases": 0,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1278,7 +1278,7 @@
           "cases": 4,
           "deaths": 1,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1288,7 +1288,7 @@
           "cases": 0,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1298,7 +1298,7 @@
           "cases": 1,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1318,7 +1318,7 @@
           "cases": 0,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1328,7 +1328,7 @@
           "cases": 0,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1348,7 +1348,7 @@
           "cases": 4,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       },
@@ -1358,7 +1358,7 @@
           "cases": 4,
           "deaths": 0,
           "hospitalized": null,
-          "icu": null,
+          "icu": 0,
           "recovered": null
         }
       }
