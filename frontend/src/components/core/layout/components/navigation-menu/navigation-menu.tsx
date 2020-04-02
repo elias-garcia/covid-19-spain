@@ -12,7 +12,12 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ pathname }) => {
   const classes = useStyles();
 
   return (
-    <Tabs value={pathname} className={classes.root} centered>
+    <Tabs
+      value={pathname}
+      className={classes.root}
+      centered
+      indicatorColor="primary"
+    >
       <Tab label="Today" value="/" component={Link} to="/" />
       <Tab
         label="Historical"

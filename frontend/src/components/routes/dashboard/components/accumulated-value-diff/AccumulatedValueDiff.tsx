@@ -6,13 +6,15 @@ import useStyles from "./styles";
 
 interface AccumulatedValueDiffProps {
   readonly value: number;
+  readonly invertColor: boolean;
 }
 
 const AccumulatedValueDiff: React.FC<AccumulatedValueDiffProps> = ({
+  invertColor,
   value,
 }) => {
   const valueSign = Math.sign(value);
-  const classes = useStyles({ valueSign });
+  const classes = useStyles({ valueSign, invertColor });
 
   return (
     <div className={classes.root}>

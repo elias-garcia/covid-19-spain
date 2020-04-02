@@ -29,7 +29,7 @@ const LineChart: React.FC<LineChartProps> = ({ data, title }) => {
         <ResponsiveLine
           theme={nivoTheme}
           data={data}
-          margin={{ top: 20, right: 160, bottom: 60, left: 40 }}
+          margin={{ top: 5, right: 160, bottom: 60, left: 40 }}
           xScale={{ type: "point" }}
           yScale={{
             type: "linear",

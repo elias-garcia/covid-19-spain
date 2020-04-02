@@ -56,6 +56,7 @@ const AccumulatedValuesWidget: React.FC<AccumulatedValuesWidgetProps> = ({
         color={theme.palette.success.main}
         total={accumulatedValues.recovered.total}
         diff={accumulatedValues.recovered.diffWithYesterday}
+        invertDiffColor={true}
       />
     </div>
   );

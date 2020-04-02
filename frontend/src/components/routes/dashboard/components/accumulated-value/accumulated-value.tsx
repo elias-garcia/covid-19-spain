@@ -12,6 +12,7 @@ export interface AccumulatedValueProps {
   readonly color: string;
   readonly total: number;
   readonly diff: number;
+  readonly invertDiffColor?: boolean;
 }
 
 const AccumulatedValue: React.FC<AccumulatedValueProps> = ({
@@ -20,6 +21,7 @@ const AccumulatedValue: React.FC<AccumulatedValueProps> = ({
   color,
   total,
   diff,
+  invertDiffColor,
 }) => {
   const classes = useStyles({ color });
 
@@ -32,7 +34,10 @@ const AccumulatedValue: React.FC<AccumulatedValueProps> = ({
         {total.toLocaleString()}
       </Typography>
       <Typography>{label}</Typography>
-      <AccumulatedValueDiff value={diff} />
+      <AccumulatedValueDiff
+        value={diff}
+        invertColor={invertDiffColor ? true : false}
+      />
     </WidgetCard>
   );
 };
