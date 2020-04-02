@@ -33,7 +33,13 @@ const mapStateToData = (
         };
       });
 
-      return [...acc, { id: autonomousCommunity, data }];
+      return [
+        ...acc,
+        {
+          id: autonomousCommunity,
+          data: data.filter((value) => value.y !== null),
+        },
+      ];
     },
     []
   );
