@@ -18,6 +18,7 @@ import {
   ABORT_DATA_LOADING,
 } from "../historical/historical.actions";
 import Report from "../../../domain/report.interface";
+import { AutonomousCommunity } from "../../../domain/autonomous-community";
 
 export const loadDataEpic = (
   action$: ActionsObservable<HistoricalAction>
@@ -55,7 +56,7 @@ export const loadAutonomousCommunitiesEpic = (
     mergeMap(() => {
       return autonomousCommunitiesApi.fetchAutonomousCommunities().pipe(
         map(
-          (autonomousCommunities: string[]) => {
+          (autonomousCommunities: AutonomousCommunity[]) => {
             return loadAutonomousCommunitiesSuccess(autonomousCommunities);
           },
           catchError((error: string) => {

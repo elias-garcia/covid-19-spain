@@ -1,4 +1,5 @@
 import Report from "../../../domain/report.interface";
+import { AutonomousCommunity } from "../../../domain/autonomous-community";
 
 export const LOAD_DATA = "[HISTORICAL] LOAD DATA";
 export const ABORT_DATA_LOADING = "[DASHBOARD] ABORT DATA LOADING";
@@ -40,7 +41,7 @@ export interface LoadAutonomousCommunities {
 
 export interface LoadAutonomousCommunitiesSuccess {
   readonly type: typeof LOAD_AUTONOMOUS_COMMUNITIES_SUCCESS;
-  readonly autonomousCommunities: string[];
+  readonly autonomousCommunities: AutonomousCommunity[];
 }
 
 export interface LoadAutonomousCommunitiesFailure {
@@ -77,7 +78,7 @@ export const loadAutonomousCommunities = (): HistoricalAction => ({
   type: LOAD_AUTONOMOUS_COMMUNITIES,
 });
 export const loadAutonomousCommunitiesSuccess = (
-  autonomousCommunities: string[]
+  autonomousCommunities: AutonomousCommunity[]
 ): HistoricalAction => ({
   type: LOAD_AUTONOMOUS_COMMUNITIES_SUCCESS,
   autonomousCommunities,

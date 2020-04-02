@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 
 import ChoroplethWidget, {
-  ChoroplethData,
   ChoroplethWidgetHandlerProps,
   ChoroplethWidgetStateProps,
   ChoroplethDataItem,
@@ -16,7 +15,7 @@ import { ReportData, Field } from "../../../../../domain/report.interface";
 
 const mapStateToData = ({
   dashboard: { latestReport, choroplethFilter },
-}: State): ChoroplethData | undefined => {
+}: State): ChoroplethWidgetStateProps["data"] => {
   if (latestReport.step !== "successful") {
     return undefined;
   }

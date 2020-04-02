@@ -11,10 +11,11 @@ import {
   LOAD_AUTONOMOUS_COMMUNITIES_SUCCESS,
   LOAD_AUTONOMOUS_COMMUNITIES_FAILURE,
 } from "./historical.actions";
+import { AutonomousCommunity } from "../../../domain/autonomous-community";
 
 export interface HistoricalState {
   readonly reports: AsyncTask<Report[]>;
-  readonly autonomousCommunities: AsyncTask<string[]>;
+  readonly autonomousCommunities: AsyncTask<AutonomousCommunity[]>;
 }
 
 const initialState: HistoricalState = {
