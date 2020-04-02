@@ -27,7 +27,7 @@ const initialState: HistoricalState = {
   autonomousCommunities: {
     step: "pending",
   },
-  selectedAutonomousCommunities: ["madrid", "galicia"],
+  selectedAutonomousCommunities: ["galicia", "madrid"],
 };
 
 // tslint:disable-next-line: no-any
