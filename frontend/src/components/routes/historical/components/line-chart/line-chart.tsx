@@ -56,7 +56,7 @@ const LineChart: React.FC<LineChartProps> = ({ data, title }) => {
             legendOffset: -40,
             legendPosition: "middle",
           }}
-          colors={{ scheme: "nivo" }}
+          colors={{ scheme: "category10" }}
           pointSize={10}
           pointColor={{ theme: "background" }}
           pointBorderWidth={2}
