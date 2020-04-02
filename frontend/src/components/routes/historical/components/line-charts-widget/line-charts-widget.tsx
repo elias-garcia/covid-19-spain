@@ -17,7 +17,7 @@ const LineChartsWidget: React.FC = () => {
   return (
     <>
       {fields.map((field) => (
-        <div className={classes.lineChart}>
+        <div className={classes.lineChart} key={field}>
           <LineChartWidgetContainer field={field} />
         </div>
       ))}

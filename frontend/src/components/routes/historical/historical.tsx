@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import useStyles from "./historical.styles";
 import LoadingSpinner from "../../shared/loading-spinner/loading-spinner";
 import LineChartsWidget from "./components/line-charts-widget/line-charts-widget";
+import AutonomousCommunitiesFilterContainer from "./components/autonomous-communities-filter/autonomous-communities-filter.container";
 
 export interface HistoricalStateProps {
   readonly areReportsLoading: boolean;
@@ -34,6 +35,7 @@ const Historical: React.FC<HistoricalProps> = ({
 
   return (
     <div className={classes.pageLoadedWrapper}>
+      <AutonomousCommunitiesFilterContainer />
       <LineChartsWidget />
     </div>
   );

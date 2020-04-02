@@ -10,12 +10,14 @@ import {
   LOAD_AUTONOMOUS_COMMUNITIES,
   LOAD_AUTONOMOUS_COMMUNITIES_SUCCESS,
   LOAD_AUTONOMOUS_COMMUNITIES_FAILURE,
+  UPDATE_SELECTED_AUTONOMOUS_COMMUNITIES,
 } from "./historical.actions";
 import { AutonomousCommunity } from "../../../domain/autonomous-community";
 
 export interface HistoricalState {
   readonly reports: AsyncTask<Report[]>;
   readonly autonomousCommunities: AsyncTask<AutonomousCommunity[]>;
+  readonly selectedAutonomousCommunities: string[];
 }
 
 const initialState: HistoricalState = {
@@ -25,6 +27,7 @@ const initialState: HistoricalState = {
   autonomousCommunities: {
     step: "pending",
   },
+  selectedAutonomousCommunities: ["madrid", "galicia"],
 };
 
 // tslint:disable-next-line: no-any
@@ -83,6 +86,12 @@ const historicalReducer: Reducer<HistoricalState, HistoricalAction> = (
           step: "failed",
           message: action.message,
         },
+      };
+    }
+    case UPDATE_SELECTED_AUTONOMOUS_COMMUNITIES: {
+      return {
+        ...state,
+        selectedAutonomousCommunities: action.autonomousCommunities,
       };
     }
     default: {

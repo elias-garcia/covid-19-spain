@@ -12,6 +12,8 @@ export const LOAD_AUTONOMOUS_COMMUNITIES_SUCCESS =
   "[HISTORICAL] LOAD AUTONOMOUS COMMUNITIES SUCCESS";
 export const LOAD_AUTONOMOUS_COMMUNITIES_FAILURE =
   "[HISTORICAL] LOAD AUTONOMOUS FAILURE";
+export const UPDATE_SELECTED_AUTONOMOUS_COMMUNITIES =
+  "[HISTORICAL] UPDATE SELECTED AUTONOMOUS COMMUNITIES";
 
 export interface LoadData {
   readonly type: typeof LOAD_DATA;
@@ -49,6 +51,11 @@ export interface LoadAutonomousCommunitiesFailure {
   readonly message: string;
 }
 
+export interface UpdateSelectedAutonomousCommunities {
+  readonly type: typeof UPDATE_SELECTED_AUTONOMOUS_COMMUNITIES;
+  readonly autonomousCommunities: string[];
+}
+
 export type HistoricalAction =
   | LoadData
   | AbortDataLoading
@@ -57,7 +64,8 @@ export type HistoricalAction =
   | LoadReportsFailure
   | LoadAutonomousCommunities
   | LoadAutonomousCommunitiesSuccess
-  | LoadAutonomousCommunitiesFailure;
+  | LoadAutonomousCommunitiesFailure
+  | UpdateSelectedAutonomousCommunities;
 
 export const loadData = (): HistoricalAction => ({ type: LOAD_DATA });
 export const abortDataLoading = (): HistoricalAction => ({
@@ -88,4 +96,10 @@ export const loadAutonomousCommunitiesFailure = (
 ): HistoricalAction => ({
   type: LOAD_AUTONOMOUS_COMMUNITIES_FAILURE,
   message,
+});
+export const updateSelectedAutonomousCommunities = (
+  autonomousCommunities: string[]
+): HistoricalAction => ({
+  type: UPDATE_SELECTED_AUTONOMOUS_COMMUNITIES,
+  autonomousCommunities,
 });

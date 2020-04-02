@@ -13,21 +13,18 @@ interface LineChartContainerProps {
 }
 
 const mapStateToData = (
-  { historical: { reports, autonomousCommunities } }: State,
+  { historical: { reports, selectedAutonomousCommunities } }: State,
   field: Field
 ): LineChartProps["data"] => {
-  if (
-    reports.step !== "successful" ||
-    autonomousCommunities.step !== "successful"
-  ) {
+  if (reports.step !== "successful") {
     return undefined;
   }
 
-  return autonomousCommunities.result.reduce<LineChartData>(
+  return selectedAutonomousCommunities.reduce<LineChartData>(
     (acc, autonomousCommunity) => {
       const data: LineChartDataItem["data"] = reports.result.map((report) => {
         const item = report.data.find(
-          (value) => value.autonomousCommunity === autonomousCommunity.name
+          (value) => value.autonomousCommunity === autonomousCommunity
         );
 
         return {
@@ -36,7 +33,7 @@ const mapStateToData = (
         };
       });
 
-      return [...acc, { id: autonomousCommunity.name, data }];
+      return [...acc, { id: autonomousCommunity, data }];
     },
     []
   );
