@@ -36,6 +36,8 @@ const LineChart: React.FC<LineChartProps> = ({ data, title }) => {
             min: "auto",
             max: "auto",
           }}
+          xFormat={(value) => new Date(value).toLocaleDateString()}
+          yFormat={(value) => Number(value).toLocaleString()}
           curve="natural"
           axisBottom={{
             orient: "bottom",

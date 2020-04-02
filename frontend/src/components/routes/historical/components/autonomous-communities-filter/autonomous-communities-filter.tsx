@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Typography } from "@material-ui/core";
+import { TextField, Typography, Chip } from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 
 import useStyles from "./autonomous-communities-filter.styles";
@@ -48,6 +48,15 @@ const AutonomousCommunitiesFilter: React.FC<AutonomousCommunitiesFilterProps> = 
         filterSelectedOptions
         onChange={handleAutocompleteChange}
         className={classes.autocomplete}
+        renderTags={(value, getTagProps) =>
+          value.map((option, index) => (
+            <Chip
+              label={option}
+              {...getTagProps({ index })}
+              disabled={index === 0}
+            />
+          ))
+        }
         renderInput={(params) => (
           <TextField
             {...params}
