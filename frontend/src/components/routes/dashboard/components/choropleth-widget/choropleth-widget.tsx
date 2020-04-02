@@ -98,7 +98,7 @@ const ChoroplethWidget: React.FC<ChoroplethWidgetProps> = ({
           projectionTranslation={projectionData.translation}
           projectionScale={projectionData.scale}
           borderWidth={1}
-          borderColor={theme.palette.text.secondary}
+          borderColor={theme.palette.text.primary}
           legends={legends}
         />
       </div>

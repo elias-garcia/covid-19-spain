@@ -29,7 +29,7 @@ const LineChart: React.FC<LineChartProps> = ({ data, title }) => {
         <ResponsiveLine
           theme={nivoTheme}
           data={data}
-          margin={{ top: 5, right: 160, bottom: 60, left: 40 }}
+          margin={{ top: 5, right: 160, bottom: 80, left: 40 }}
           xScale={{ type: "point" }}
           yScale={{
             type: "linear",
@@ -39,26 +39,23 @@ const LineChart: React.FC<LineChartProps> = ({ data, title }) => {
           curve="natural"
           axisBottom={{
             orient: "bottom",
+            format: (value) => new Date(value).toLocaleDateString(),
             tickSize: 5,
             tickPadding: 5,
-            tickRotation: -56,
-            legendOffset: 36,
+            tickRotation: -60,
+            legendOffset: 50,
             legendPosition: "middle",
           }}
           axisLeft={{
             orient: "left",
+            format: ".2s",
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legendOffset: -40,
+            legendOffset: -50,
             legendPosition: "middle",
           }}
           colors={{ scheme: "category10" }}
-          pointSize={5}
-          pointColor={{ theme: "background" }}
-          pointBorderColor={{ from: "serieColor" }}
-          pointLabel="y"
-          pointLabelYOffset={-12}
           useMesh={true}
           legends={[
             {
@@ -74,7 +71,6 @@ const LineChart: React.FC<LineChartProps> = ({ data, title }) => {
               itemOpacity: 0.75,
               symbolSize: 12,
               symbolShape: "circle",
-              symbolBorderColor: "rgba(0, 0, 0, .5)",
             },
           ]}
         />
