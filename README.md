@@ -89,6 +89,11 @@ contains the values reported for each autonomous community.
   - **to**: Date in ISO 8601 format to which you want to retrieve the reports.
   - **autonomousCommunities**: Comma seppared list of the autonomous communities
     values to be included in the report.
+  - **sortField**: String which represents the field by which we want to order
+    the results.
+  - **sortOrder**: The order for the sorting: "asc" or "desc".
+  - **limit**: A number representing how many reports we want to retrieve. This
+    is specially useful to retrieve the most recent report.
 
 ## GET /accumulated-values
 
