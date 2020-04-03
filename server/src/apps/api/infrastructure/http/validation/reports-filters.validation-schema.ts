@@ -17,5 +17,8 @@ const reportsFiltersValidationSchema: yup.Schema<ReportsFilters> = yup
       })
       .of(yup.string()),
     from: yup.date(),
-    to: yup.date()
+    to: yup.date(),
+    sortField: yup.string().oneOf(["timestamp"]),
+    sortOrder: yup.string().oneOf(["asc", "desc"]),
+    limit: yup.number()
   });

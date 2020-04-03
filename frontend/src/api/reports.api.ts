@@ -5,43 +5,36 @@ import Report from "../domain/report.interface";
 import { map } from "rxjs/operators";
 
 interface FetchReportsParams {
-  readonly from: Date;
-  readonly to: Date;
-  readonly autonomousCommunities: string[];
+  readonly sort: {
+    readonly field: keyof Pick<Report, "timestamp">;
+    readonly order: "asc" | "desc";
+  };
+  readonly limit: number;
 }
 
 const REPORTS_API_URL = `${process.env.REACT_APP_API_URL}/reports`;
 
 const buildFetchReportsQueryString = ({
-  from,
-  to,
-  autonomousCommunities,
+  sort,
+  limit,
 }: Partial<FetchReportsParams>): string => {
   const queryParams = new URLSearchParams();
 
-  if (from) {
-    queryParams.append("from", from.toISOString());
+  if (sort) {
+    queryParams.append("sortField", sort.field);
+    queryParams.append("sortOrder", sort.order);
   }
-  if (to) {
-    queryParams.append("to", to.toISOString());
-  }
-  if (autonomousCommunities) {
-    queryParams.append(
-      "autonomousCommunities",
-      autonomousCommunities.join(",")
-    );
+  if (limit) {
+    queryParams.append("limit", limit.toFixed());
   }
 
   return queryParams.toString();
 };
 
 export const fetchLatestReport = (): Observable<Report> => {
-  const fromDate = new Date(new Date().setUTCHours(0, 0, 0, 0));
-  const toDate = new Date(new Date().setUTCHours(24, 0, 0, 0));
-
   return fetchReports({
-    from: fromDate,
-    to: toDate,
+    sort: { field: "timestamp", order: "desc" },
+    limit: 1,
   }).pipe(map((reports) => reports[0]));
 };
 

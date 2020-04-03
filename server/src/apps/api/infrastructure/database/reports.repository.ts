@@ -8,10 +8,15 @@ import { AccumulatedValues } from "../../../../shared/domain/accumulated-values.
 
 export { getAll, getAccumulatedValues };
 
-const SORT_ORDER: Partial<Record<keyof Report, 1 | -1>> = { timestamp: 1 };
+const DEFAULT_SORT_ORDER: Partial<Record<
+  keyof Pick<Report, "timestamp">,
+  "asc" | "desc"
+>> = {
+  timestamp: "asc"
+};
 
 function buildGetAllFiltersQuery(
-  filters: ReportsFilters
+  filters: Omit<ReportsFilters, "limit">
 ): MongooseFilterQuery<MongoDoc<Report>> {
   const timestampFilter = {
     ...(filters.from !== undefined || filters.to !== undefined
@@ -27,6 +32,17 @@ function buildGetAllFiltersQuery(
   return {
     ...timestampFilter
   };
+}
+
+function buildGetAllSort(
+  sortField: keyof Pick<Report, "timestamp"> | undefined,
+  sortOrder: "asc" | "desc" | undefined
+): Partial<Record<keyof Pick<Report, "timestamp">, "asc" | "desc">> {
+  if (sortField === undefined || sortOrder === undefined) {
+    return DEFAULT_SORT_ORDER;
+  }
+
+  return { [sortField]: sortOrder };
 }
 
 function buildGetAllAggregationPipeline(
@@ -53,11 +69,18 @@ function buildGetAllAggregationPipeline(
 }
 
 async function getAll(filters: ReportsFilters): Promise<MongoDoc<Report>[]> {
-  const filtersQuery = buildGetAllFiltersQuery(filters);
+  const filtersQuery = buildGetAllFiltersQuery({
+    to: filters.to,
+    from: filters.from,
+    autonomousCommunities: filters.autonomousCommunities
+  });
+  const sort = buildGetAllSort(filters.sortField, filters.sortOrder);
+  const limit: number = filters.limit || 0;
 
   if (filters.autonomousCommunities === undefined) {
     return ReportModel.find(filtersQuery)
-      .sort(SORT_ORDER)
+      .sort(sort)
+      .limit(limit)
       .exec();
   }
 
@@ -67,7 +90,8 @@ async function getAll(filters: ReportsFilters): Promise<MongoDoc<Report>[]> {
   );
 
   return ReportModel.aggregate(aggregationPipeline)
-    .sort(SORT_ORDER)
+    .sort(sort)
+    .limit(limit)
     .exec();
 }
 
