@@ -16,6 +16,10 @@ const mapStateToProps = (state: State): DashboardStateProps => ({
   isInitialDataLoading:
     state.dashboard.latestReport.step === "loading" ||
     state.dashboard.accumulatedValues.step === "loading",
+  lastReportUpdate:
+    state.dashboard.latestReport.step !== "successful"
+      ? undefined
+      : state.dashboard.latestReport.result.timestamp,
 });
 
 const mapDispatchToProps = (
