@@ -59,6 +59,7 @@ const LineChart: React.FC<LineChartProps> = ({ data, title }) => {
     },
     colors: { scheme: "nivo" },
     useMesh: true,
+    enableSlices: "x",
     legends: [
       {
         anchor: "top",
