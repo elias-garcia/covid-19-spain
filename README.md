@@ -14,10 +14,13 @@ published by the spanish government and don't rely in other third party data
 sources, and the second one is accomplished by exposing the data extracted from
 this reports through a REST API.
 
-The idea is also to create a frontend that consumes this API (IN PROGRESS).
+The dashboard is publicly avaibale at
+[https://covid-19-spain-tracker.herokuapp.com](https://covid-19-spain-tracker.herokuapp.com).
 
-The REST API is publicly available at
+The REST API is also available at
 [https://covid-19-spain-api.herokuapp.com](https://covid-19-spain-api.herokuapp.com).
+You can find the documentation for the available endpoints at the end of this
+README.
 
 # How does it works?
 
